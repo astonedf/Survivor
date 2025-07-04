@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=7 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://player.gd" id="1_onrkg"]
 
@@ -14,6 +14,15 @@ fill_from = Vector2(0.5, 0.5)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
 height = 44.0
+
+[sub_resource type="Gradient" id="Gradient_onrkg"]
+offsets = PackedFloat32Array(0, 0.344156, 0.688312)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i3pqv"]
+gradient = SubResource("Gradient_onrkg")
+fill = 1
+fill_from = Vector2(0.495413, 0.486239)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
@@ -31,6 +40,15 @@ position = Vector2(0, -2)
 polygon = PackedVector2Array(0, 2, 102, -22, 102, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasLayer"]
+position = Vector2(2.00011, -2)
+scale = Vector2(23.9375, 13.2266)
+color = Color(1, 0.918333, 0.65, 1)
+texture = SubResource("GradientTexture2D_i3pqv")
+offset = Vector2(35, 35)
 
 [connection signal="area_entered" from="Spray" to="." method="_on_spray_area_entered"]
 [connection signal="area_exited" from="Spray" to="." method="_on_spray_area_exited"]
