@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpir78vrqcbpj"
-path="res://.godot/imported/Decorations.png-327d4c0171ea1839bf23b51cbbb96d02.ctex"
+uid="uid://cxrchlfmuu216"
+path="res://.godot/imported/Mockup2.png-26f094cdfa98721772a161050ce2ede4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Decorations/Decorations.png"
-dest_files=["res://.godot/imported/Decorations.png-327d4c0171ea1839bf23b51cbbb96d02.ctex"]
+source_file="res://scenes/main/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Mockup2.png"
+dest_files=["res://.godot/imported/Mockup2.png-26f094cdfa98721772a161050ce2ede4.ctex"]
 
 [params]
 

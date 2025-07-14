@@ -1,19 +1,22 @@
 extends CharacterBody2D
 
-@onready var bullet = preload("res://bullet.tscn")
+@onready var bullet = preload("res://weapons/bullet/bullet.tscn")
 var speed = 100  # speed in pixels/sec
 var flower_in_range = []
 var enemy_in_range = false
 var destination: Vector2
 var target_position: Vector2
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
 		destination = get_global_mouse_position()
 	if event.is_action_pressed("LMB"):
 		shoot()
-		
+
+
 func _physics_process(delta):
+	PlayerManager.position_updated.emit(global_position)
 	look_at(get_global_mouse_position())
 
 	var mouse_distance = position.distance_to(get_global_mouse_position())
