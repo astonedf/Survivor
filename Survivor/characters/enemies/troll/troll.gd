@@ -1,11 +1,11 @@
-class_name Goblin extends Enemy
+class_name Troll extends Enemy
 
 @onready var health = $ProgressBar
 
 
 func _ready() -> void:
 	super._ready()
-	_speed = 65.0
+	_speed = 25.0
 
 func _on_target_area_body_entered(body: Node2D) -> void:
 	print(body)
