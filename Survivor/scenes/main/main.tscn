@@ -685,9 +685,27 @@ position = Vector2(340, 284)
 [node name="Goblin" parent="." instance=ExtResource("5_b1x3f")]
 position = Vector2(240, 84)
 
+[node name="Goblin2" parent="." instance=ExtResource("5_b1x3f")]
+position = Vector2(280, 84)
+
+[node name="Goblin3" parent="." instance=ExtResource("5_b1x3f")]
+position = Vector2(214, 122)
+
+[node name="Goblin4" parent="." instance=ExtResource("5_b1x3f")]
+position = Vector2(262, 136)
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(1, 1, 1, 0.611765)
 blend_mode = 1
 
 [node name="Troll" parent="." instance=ExtResource("6_ow5a4")]
 position = Vector2(533, 221)
+
+[node name="Troll2" parent="." instance=ExtResource("6_ow5a4")]
+position = Vector2(545, 157)
+
+[node name="Troll3" parent="." instance=ExtResource("6_ow5a4")]
+position = Vector2(583, 237)
+
+[node name="Troll4" parent="." instance=ExtResource("6_ow5a4")]
+position = Vector2(494, 199)
