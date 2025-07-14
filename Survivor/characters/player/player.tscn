@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=9 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://c8nuytiag3hsy" path="res://characters/player/enemy_spawner.gd" id="2_xxgcw"]
 
 [sub_resource type="Gradient" id="Gradient_4flbx"]
 offsets = PackedFloat32Array(0.383117, 0.467532, 0.532468, 1)
@@ -24,7 +25,13 @@ gradient = SubResource("Gradient_onrkg")
 fill = 1
 fill_from = Vector2(0.495413, 0.486239)
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="Curve2D" id="Curve2D_508ok"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -831.959, -465.981, 0, 0, 0, 0, 821.027, -462.057, 0, 0, 0, 0, 812.049, 450.285, 0, 0, 0, 0, -820.986, 450.285, 0, 0, 0, 0, -831.959, -460.095)
+}
+point_count = 5
+
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_onrkg")
 
@@ -51,5 +58,26 @@ color = Color(1, 0.918333, 0.65, 1)
 texture = SubResource("GradientTexture2D_i3pqv")
 offset = Vector2(35, 35)
 
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("2_xxgcw")
+
+[node name="SpawnPath" type="Path2D" parent="EnemySpawner"]
+position = Vector2(1.97937, 9)
+scale = Vector2(1.00243, 1.01935)
+curve = SubResource("Curve2D_508ok")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/SpawnPath"]
+position = Vector2(-831.959, -465.981)
+rotation = 0.00237391
+
+[node name="SpawnPoint" type="Marker2D" parent="EnemySpawner/SpawnPath/PathFollow2D"]
+gizmo_extents = 85.5
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
 [connection signal="area_entered" from="Spray" to="." method="_on_spray_area_entered"]
 [connection signal="area_exited" from="Spray" to="." method="_on_spray_area_exited"]
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]

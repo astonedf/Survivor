@@ -37,7 +37,8 @@ offset_right = 172.0
 offset_bottom = 6.0
 scale = Vector2(0.2, 0.2)
 theme_override_styles/fill = SubResource("StyleBoxFlat_r72as")
-value = 100.0
+max_value = 400.0
+value = 400.0
 show_percentage = false
 
 [node name="TargetArea" type="Area2D" parent="."]

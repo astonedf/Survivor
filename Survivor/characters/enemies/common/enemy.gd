@@ -7,7 +7,7 @@ var _goal_position := Vector2()
 
 
 func _ready() -> void:
-	collision_layer = 0b0100 # collision layer 3, which is ennemies
+	collision_layer = 0b0100 # collision layer 3, which is enemies
 	collision_mask = 0b0011 # collision masks 1 and 2, which is environment and player
 	PlayerManager.position_updated.connect(_on_player_position_updated)
 
