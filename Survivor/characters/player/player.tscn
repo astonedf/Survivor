@@ -68,7 +68,7 @@ curve = SubResource("Curve2D_508ok")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/SpawnPath"]
 position = Vector2(-831.959, -465.981)
-rotation = 0.00237391
+rotation = 0.00237387
 
 [node name="SpawnPoint" type="Marker2D" parent="EnemySpawner/SpawnPath/PathFollow2D"]
 gizmo_extents = 85.5

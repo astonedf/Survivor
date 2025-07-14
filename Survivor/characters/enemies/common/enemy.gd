@@ -1,3 +1,4 @@
+# Contains the behavior common to all enemies
 class_name Enemy extends CharacterBody2D
 
 
@@ -14,6 +15,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if _can_move:
+		# Moves towards the player
 		var distance = _goal_position - global_position
 		var direction = distance.normalized()
 		velocity = direction * _speed
