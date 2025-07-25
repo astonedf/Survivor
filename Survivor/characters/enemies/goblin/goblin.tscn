@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://boxl6hyaunb8e"]
 
-[ext_resource type="Script" uid="uid://slbsni3cf46i" path="res://target.gd" id="1_e1yvt"]
+[ext_resource type="Script" uid="uid://slbsni3cf46i" path="res://characters/enemies/goblin/goblin.gd" id="1_e1yvt"]
 [ext_resource type="Texture2D" uid="uid://wy5v10ju3gmm" path="res://icon.svg" id="2_5ebp1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1yvt"]
@@ -15,11 +15,14 @@ corner_radius_bottom_left = 4
 [sub_resource type="CircleShape2D" id="CircleShape2D_nageh"]
 radius = 17.0
 
-[node name="Target" type="CharacterBody2D"]
+[node name="Goblin" type="CharacterBody2D"]
 texture_filter = 1
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_e1yvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.839216, 0.0313726, 1)
 position = Vector2(0.499998, -0.346668)
 scale = Vector2(0.179687, 0.182083)
 texture = ExtResource("2_5ebp1")

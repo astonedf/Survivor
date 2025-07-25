@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxrchlfmuu216"
-path="res://.godot/imported/Mockup2.png-bc338a407fc3a2c39a04657d360e56e8.ctex"
+uid="uid://dfnwg3km1fr3n"
+path="res://.godot/imported/ts_dungeon.png-edcdd3b2d5f0d8b87500c6272a2b48d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Mockup2.png"
-dest_files=["res://.godot/imported/Mockup2.png-bc338a407fc3a2c39a04657d360e56e8.ctex"]
+source_file="res://scenes/main/ts_dungeon.png"
+dest_files=["res://.godot/imported/ts_dungeon.png-edcdd3b2d5f0d8b87500c6272a2b48d9.ctex"]
 
 [params]
 

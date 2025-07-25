@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blov3h4eqi1ox"
-path="res://.godot/imported/Mockup3.png-73047f3cc11713b43d0db3589d4525ac.ctex"
+uid="uid://boytuax7c8d0y"
+path="res://.godot/imported/Tileset.png-29f569df9f68227f28f9b776ff83d4c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Mockup3.png"
-dest_files=["res://.godot/imported/Mockup3.png-73047f3cc11713b43d0db3589d4525ac.ctex"]
+source_file="res://scenes/main/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Tiles/Tileset.png"
+dest_files=["res://.godot/imported/Tileset.png-29f569df9f68227f28f9b776ff83d4c5.ctex"]
 
 [params]
 

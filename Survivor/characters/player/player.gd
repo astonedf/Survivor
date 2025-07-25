@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var bullet = preload("res://bullet.tscn")
+@onready var bullet = preload("res://weapons/bullet/bullet.tscn")
 var speed = 100  # speed in pixels/sec
 var flower_in_range = []
 var enemy_in_range = false
@@ -15,6 +15,7 @@ var attacking: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
+		can_move = true
 		destination = get_global_mouse_position()
 	if event.is_action_pressed("LMB"):
 		shoot()
