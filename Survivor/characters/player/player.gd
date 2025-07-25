@@ -18,11 +18,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		can_move = true
 		destination = get_global_mouse_position()
 	if event.is_action_pressed("LMB"):
-		shoot()
+		#shoot()
+		$CrushArea/CrushColl.disabled = false
+	if event.is_action_released("LMB"):
+		$CrushArea/CrushColl.disabled = true
 
 
 func _physics_process(delta):
 	PlayerManager.position_updated.emit(global_position)
+	
+	$CanvasLayer/Arm.position = get_viewport().get_mouse_position()
+	$CrushArea.position = get_local_mouse_position()
 	
 	if can_move:
 		$Spray.look_at(get_global_mouse_position())

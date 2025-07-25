@@ -19,4 +19,6 @@ func _on_progress_bar_value_changed(value: float) -> void:
 
 func _on_target_area_area_entered(area: Area2D) -> void:
 	if area.name == "HitArea":
-		health.value -= 50
+		health.value -= 20
+	if area.name == "CrushArea":
+		health.value -= 100

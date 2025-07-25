@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=27 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
 [ext_resource type="Script" uid="uid://c8nuytiag3hsy" path="res://characters/player/enemy_spawner.gd" id="2_xxgcw"]
+[ext_resource type="Texture2D" uid="uid://d4jqufy08op3" path="res://assets/arm.png" id="3_58jvb"]
 [ext_resource type="Texture2D" uid="uid://hdjfgk8iim74" path="res://assets/player/witch5.png" id="4_idpv6"]
 [ext_resource type="Texture2D" uid="uid://vcfi5b4e835j" path="res://assets/player/witch6.png" id="5_rpf03"]
 [ext_resource type="Texture2D" uid="uid://dopi03mkv0fuu" path="res://assets/player/witch7.png" id="6_x5dtk"]
@@ -18,6 +19,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
 height = 44.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58jvb"]
+radius = 21.0238
 
 [sub_resource type="Gradient" id="Gradient_onrkg"]
 offsets = PackedFloat32Array(0, 0.344156, 0.688312)
@@ -171,7 +175,6 @@ texture = ExtResource("2_dirf7")
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Spray" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spray"]
 position = Vector2(0, -2)
@@ -182,6 +185,14 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
+[node name="CrushArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CrushColl" type="CollisionShape2D" parent="CrushArea"]
+shape = SubResource("CircleShape2D_58jvb")
+disabled = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasLayer"]
@@ -190,6 +201,13 @@ scale = Vector2(23.9375, 13.2266)
 color = Color(1, 0.918333, 0.65, 1)
 texture = SubResource("GradientTexture2D_i3pqv")
 offset = Vector2(35, 35)
+
+[node name="Arm" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(1395, 534)
+scale = Vector2(3, 3)
+texture = ExtResource("3_58jvb")
+centered = false
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("2_xxgcw")
