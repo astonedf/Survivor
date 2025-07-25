@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://boxl6hyaunb8e"]
+[gd_scene load_steps=6 format=3 uid="uid://bcw1ak2t5b4m4"]
 
-[ext_resource type="Script" uid="uid://slbsni3cf46i" path="res://target.gd" id="1_e1yvt"]
-[ext_resource type="Texture2D" uid="uid://wy5v10ju3gmm" path="res://icon.svg" id="2_5ebp1"]
+[ext_resource type="Script" uid="uid://b86ceiyr2ypo5" path="res://characters/enemies/troll/troll.gd" id="1_l7lvb"]
+[ext_resource type="Texture2D" uid="uid://wy5v10ju3gmm" path="res://icon.svg" id="2_f0c5j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1yvt"]
 
@@ -15,14 +15,17 @@ corner_radius_bottom_left = 4
 [sub_resource type="CircleShape2D" id="CircleShape2D_nageh"]
 radius = 17.0
 
-[node name="Target" type="CharacterBody2D"]
+[node name="Troll" type="CharacterBody2D"]
 texture_filter = 1
-script = ExtResource("1_e1yvt")
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_l7lvb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0640012, 0.754186, 1, 1)
 position = Vector2(0.499998, -0.346668)
 scale = Vector2(0.179687, 0.182083)
-texture = ExtResource("2_5ebp1")
+texture = ExtResource("2_f0c5j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e1yvt")
@@ -34,7 +37,8 @@ offset_right = 172.0
 offset_bottom = 6.0
 scale = Vector2(0.2, 0.2)
 theme_override_styles/fill = SubResource("StyleBoxFlat_r72as")
-value = 100.0
+max_value = 400.0
+value = 400.0
 show_percentage = false
 
 [node name="TargetArea" type="Area2D" parent="."]
