@@ -50,4 +50,5 @@ position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_nageh")
 
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]
+[connection signal="area_entered" from="TargetArea" to="." method="_on_target_area_area_entered"]
 [connection signal="body_entered" from="TargetArea" to="." method="_on_target_area_body_entered"]
