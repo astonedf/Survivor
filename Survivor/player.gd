@@ -6,30 +6,77 @@ var flower_in_range = []
 var enemy_in_range = false
 var destination: Vector2
 var target_position: Vector2
+var can_move := false
+var direction
+var look_right_pos = Vector2(32,0)
+var look_left_pos = Vector2(-32,0)
+var attacking: bool = false
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
 		destination = get_global_mouse_position()
 	if event.is_action_pressed("LMB"):
 		shoot()
-		
+
+
 func _physics_process(delta):
-	look_at(get_global_mouse_position())
-
-	var mouse_distance = position.distance_to(get_global_mouse_position())
-	mouse_distance = remap(mouse_distance, 100, 1000, 0.1, 1)
+	PlayerManager.position_updated.emit(global_position)
 	
-	if position.distance_to(destination) > 3:
-		target_position = (destination - position).normalized()
-		velocity = target_position * speed
+	if can_move:
+		$Spray.look_at(get_global_mouse_position())
 
-		move_and_slide()
+		var mouse_distance = position.distance_to(get_global_mouse_position())
+		mouse_distance = remap(mouse_distance, 100, 1000, 0.1, 1)
+		
+		if destination.x > position.x:
+			direction = 1
+		else:
+			direction = -1
+		
+		if position.distance_to(destination) > 3:
+			target_position = (destination - position).normalized()
+			velocity = target_position * speed
+			move_and_slide()
+		else:
+			velocity = Vector2(0,0)
+		
+		handle_movement_anim(direction)
+			
+func handle_movement_anim(dir):
+	if !attacking:
+		if !velocity:
+			$AnimationPlayer.play("Idle")
+		if velocity:
+			$AnimationPlayer.play("Walk")
+			toggle_flip_sprite(dir)
 
+func toggle_flip_sprite(dir):
+	if dir == 1:
+		$Sprite2D.flip_h = false
+		$Sprite2D.position = look_right_pos
+		$HitArea/HitLeft.disabled = true
+		$HitArea/HitRight.disabled = false
+	else:
+		$Sprite2D.flip_h = true
+		$Sprite2D.position = look_left_pos
+		$HitArea/HitLeft.disabled = false
+		$HitArea/HitRight.disabled = true
 
 func shoot():
 	var instance = bullet.instantiate()
-	instance.dir = rotation
+	instance.dir = $Spray.rotation
 	instance.spawnPos = global_position
-	instance.spawnRot = rotation
+	instance.spawnRot = $Spray.rotation
 	get_parent().add_child.call_deferred(instance)
 	
+
+
+func _on_hit_timer_timeout() -> void:
+	attacking = true
+	$AnimationPlayer.play("Hit")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Hit":
+		attacking = false
