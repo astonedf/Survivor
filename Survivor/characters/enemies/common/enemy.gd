@@ -1,6 +1,7 @@
 # Contains the behavior common to all enemies
 class_name Enemy extends CharacterBody2D
 
+@export var _health := 1.0
 
 var _can_move := true
 var _speed := 0.0
@@ -24,3 +25,10 @@ func _physics_process(delta: float) -> void:
 		
 func _on_player_position_updated(player_position: Vector2) -> void:
 	_goal_position = player_position
+	
+	
+func _take_damage(raw_amount: float) -> void:
+	_health -= raw_amount
+	
+	if _health <= 0:
+		queue_free()
