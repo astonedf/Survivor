@@ -3,7 +3,6 @@ class_name Troll extends Enemy
 
 func _ready() -> void:
 	super._ready()
-	_speed = 25.0
 
 
 func _on_target_area_body_entered(body: Node2D) -> void:

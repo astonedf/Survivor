@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=28 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bqxh7htlno2xo" path="res://assets/player/witch1.png" id="12_d2agh"]
 [ext_resource type="Texture2D" uid="uid://bvitqemes1g11" path="res://assets/player/witch2.png" id="13_fpo3a"]
 [ext_resource type="Texture2D" uid="uid://bxsj7n7pbii7" path="res://assets/player/witch3.png" id="14_kyfeq"]
+[ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
@@ -165,6 +166,8 @@ height = 56.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
+_can_move = false
+_speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -253,6 +256,9 @@ shape = SubResource("CapsuleShape2D_icpky")
 position = Vector2(-36, 1)
 shape = SubResource("CapsuleShape2D_icpky")
 disabled = true
+
+[node name="HealthBar" parent="." instance=ExtResource("16_8l73k")]
+position = Vector2(0, -49)
 
 [connection signal="area_entered" from="Spray" to="." method="_on_spray_area_entered"]
 [connection signal="area_exited" from="Spray" to="." method="_on_spray_area_exited"]
