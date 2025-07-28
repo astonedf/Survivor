@@ -1,6 +1,5 @@
 class_name Player extends Character
 
-@onready var bullet = preload("res://weapons/bullet/bullet.tscn")
 @onready var witch_arm: Weapon = $WitchArm
 @onready var witch_broom: Weapon = $WitchBroom
 
@@ -27,8 +26,6 @@ func _physics_process(delta):
 	PlayerManager.position_updated.emit(global_position)
 	
 	if _can_move:
-		$Spray.look_at(get_global_mouse_position())
-
 		var mouse_distance = position.distance_to(get_global_mouse_position())
 		mouse_distance = remap(mouse_distance, 100, 1000, 0.1, 1)
 		
@@ -60,14 +57,6 @@ func toggle_flip_sprite(dir):
 		$Sprite2D.flip_h = false
 	else:
 		$Sprite2D.flip_h = true
-
-
-func shoot():
-	var instance = bullet.instantiate()
-	instance.dir = $Spray.rotation
-	instance.spawnPos = global_position
-	instance.spawnRot = $Spray.rotation
-	get_parent().add_child.call_deferred(instance)
 
 
 func _on_weapon_pickup_range_area_body_entered(weapon: Weapon) -> void:
