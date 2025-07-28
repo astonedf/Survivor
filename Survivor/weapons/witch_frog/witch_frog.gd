@@ -10,13 +10,13 @@ func _ready() -> void:
 		animation_player.play("grounded")
 
 
-func _on_hit_rate_timer_timeout() -> void:
+func _on_attack_rate_timer_timeout() -> void:
 	animation_player.play("jump")
-	_hit_duration_timer.start()
+	_attack_duration_timer.start()
 	
 	
-func _on_hit_duration_timer_timeout() -> void:
-	_hit_rate_timer.start()
+func _on_attack_duration_timer_timeout() -> void:
+	_attack_rate_timer.start()
 	
 
 func pickup(new_holder: Character) -> void:
@@ -26,4 +26,4 @@ func pickup(new_holder: Character) -> void:
 		await animation_player.animation_finished
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", Vector2(), 0.2)
-		_hit_rate_timer.start()
+		_attack_rate_timer.start()

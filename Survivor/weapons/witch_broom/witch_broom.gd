@@ -31,12 +31,12 @@ func _on_hit_rate_timer_timeout() -> void:
 	_attacking = true
 	_update_collision_shapes()
 	sprite_2d.flip_v = true
-	_hit_duration_timer.start()
+	_attack_duration_timer.start()
 
 	
-func _on_hit_duration_timer_timeout() -> void:
+func _on_attack_duration_timer_timeout() -> void:
 	_attacking = false
-	_hit_rate_timer.start()
+	_attack_rate_timer.start()
 	sprite_2d.flip_v = false
 	collision_shape_left.disabled = true
 	collision_shape_right.disabled = true
@@ -57,4 +57,4 @@ func _update_collision_shapes():
 	
 func pickup(new_holder: Character) -> void:
 	super.pickup(new_holder)
-	_hit_rate_timer.start()
+	_attack_rate_timer.start()

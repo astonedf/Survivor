@@ -37,8 +37,9 @@ func _take_damage(raw_amount: float) -> void:
 	if _can_take_damage:
 		var final_amount = raw_amount - _armor
 		
-		_health -= final_amount
-		damage_taken.emit(final_amount)
-		
-		if _health <= 0:
-			queue_free()
+		if final_amount > 0:
+			_health -= final_amount
+			damage_taken.emit(final_amount)
+			
+			if _health <= 0:
+				queue_free()
