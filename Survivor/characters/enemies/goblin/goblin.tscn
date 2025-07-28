@@ -11,8 +11,8 @@ radius = 17.0
 
 [node name="Goblin" type="CharacterBody2D"]
 texture_filter = 1
-collision_layer = 0
-collision_mask = 0
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_e1yvt")
 _health = 100.0
 _speed = 65.0
@@ -26,16 +26,14 @@ texture = ExtResource("2_5ebp1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e1yvt")
 
-[node name="TargetArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+[node name="DamageableArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_nageh")
+debug_color = Color(0.62148, 0.464657, 0.69799, 0.42)
 
 [node name="HealthBar" parent="." instance=ExtResource("2_1kt5n")]
 position = Vector2(0, -21)
-
-[connection signal="area_entered" from="TargetArea" to="." method="_on_target_area_area_entered"]
-[connection signal="body_entered" from="TargetArea" to="." method="_on_target_area_body_entered"]

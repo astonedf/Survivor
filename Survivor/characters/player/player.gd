@@ -1,6 +1,8 @@
-extends Character
+class_name Player extends Character
 
 @onready var bullet = preload("res://weapons/bullet/bullet.tscn")
+@onready var witch_frog: Weapon = $WitchFrog
+
 var flower_in_range = []
 var enemy_in_range = false
 var destination: Vector2
@@ -10,6 +12,9 @@ var look_right_pos = Vector2(32,0)
 var look_left_pos = Vector2(-32,0)
 var attacking: bool = false
 
+
+func _ready() -> void:
+	witch_frog.pickup(self)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):

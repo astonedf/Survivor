@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=29 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -164,7 +164,13 @@ _data = {
 radius = 21.0
 height = 56.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8l73k"]
+radius = 19.0
+height = 78.0
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_onrkg")
 _can_move = false
 _speed = 100.0
@@ -256,6 +262,14 @@ shape = SubResource("CapsuleShape2D_icpky")
 position = Vector2(-36, 1)
 shape = SubResource("CapsuleShape2D_icpky")
 disabled = true
+
+[node name="DamageableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
+shape = SubResource("CapsuleShape2D_8l73k")
+debug_color = Color(0.734018, 0.349385, 0.801787, 0.42)
 
 [node name="HealthBar" parent="." instance=ExtResource("16_8l73k")]
 position = Vector2(0, -49)
