@@ -1,9 +1,8 @@
 class_name Weapon extends CharacterBody2D
 
 
-enum State {GROUNDED, PICKED_UP}
 @export var _damage := 1.0
-@export var _state: State
+
 var _holder: Character = null
 
 

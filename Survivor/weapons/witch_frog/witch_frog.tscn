@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drv4dl8jmyeck"]
+[gd_scene load_steps=8 format=3 uid="uid://drv4dl8jmyeck"]
 
 [ext_resource type="Script" uid="uid://241h0sswcemd" path="res://weapons/witch_frog/witch_frog.gd" id="1_8th6u"]
 [ext_resource type="Texture2D" uid="uid://cbefli1njodwt" path="res://weapons/witch_frog/witch_frog.png" id="1_y3l4l"]
@@ -107,9 +107,27 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_uj342"]
+resource_name = "grounded"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-4.76837e-07, -2.38419e-07), Vector2(-2.84217e-14, -12)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uj342"]
 _data = {
 &"RESET": SubResource("Animation_nt7ld"),
+&"grounded": SubResource("Animation_uj342"),
 &"jump": SubResource("Animation_8th6u")
 }
 
@@ -134,6 +152,5 @@ libraries = {
 speed_scale = 2.0
 
 [node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

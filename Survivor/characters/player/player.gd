@@ -1,7 +1,6 @@
 class_name Player extends Character
 
 @onready var bullet = preload("res://weapons/bullet/bullet.tscn")
-@onready var witch_frog: Weapon = $WitchFrog
 
 var flower_in_range = []
 var enemy_in_range = false
@@ -11,10 +10,7 @@ var direction
 var look_right_pos = Vector2(32,0)
 var look_left_pos = Vector2(-32,0)
 var attacking: bool = false
-
-
-func _ready() -> void:
-	witch_frog.pickup(self)
+	
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
@@ -90,3 +86,7 @@ func _on_hit_timer_timeout() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Hit":
 		attacking = false
+
+
+func _on_weapon_pickup_range_area_body_entered(body: Weapon) -> void:
+	body.pickup(self)
