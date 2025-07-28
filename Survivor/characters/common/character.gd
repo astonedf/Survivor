@@ -1,4 +1,5 @@
 class_name Character extends CharacterBody2D
+## Base class for Player, Enemy and Npc
 
 signal damage_taken(amount: float)
 
@@ -19,14 +20,14 @@ func _ready() -> void:
 	
 
 ## Damageable areas are set to detect only the weapons layer for now.
-## To make something damage characters, it must then herit from the Weapon class.
-func _on_damageable_area_body_entered(body: Node2D) -> void:
+## To make something damage characters, it must then be on the weapons layer.
+func _on_damageable_area_body_entered(body: Weapon) -> void:
 	# Overriden in children classes
 	pass
 	
 		
 ## Damageable areas are set to detect only the weapons layer for now.
-## To make something damage characters, it must then herit from the Weapon class.
+## To make something damage characters, it must then be on the weapons layer.
 func  _on_damageable_area_area_entered(area: Area2D) -> void:
 	# Overriden in children classes
 	pass

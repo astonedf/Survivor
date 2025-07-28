@@ -1,21 +1,22 @@
 extends Weapon
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var timer: Timer = $Timer
 
 
 func _ready() -> void:
+	super._ready()
+	
 	if _holder == null:
 		animation_player.play("grounded")
-		
 
-func _attack() -> void:
-	super._attack()
+
+func _on_hit_rate_timer_timeout() -> void:
 	animation_player.play("jump")
-
-
-func _on_timer_timeout() -> void:
-	_attack()
+	_hit_duration_timer.start()
+	
+	
+func _on_hit_duration_timer_timeout() -> void:
+	_hit_rate_timer.start()
 	
 
 func pickup(new_holder: Character) -> void:
@@ -23,7 +24,6 @@ func pickup(new_holder: Character) -> void:
 		super.pickup(new_holder)
 		animation_player.play("RESET")
 		await animation_player.animation_finished
-		reparent(new_holder)
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "position", Vector2(), 0.2)
-		timer.start()
+		_hit_rate_timer.start()

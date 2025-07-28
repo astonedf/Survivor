@@ -1,5 +1,6 @@
-# Contains the behavior common to all enemies
 class_name Enemy extends Character
+## Contains the behavior common to all enemies
+
 
 var _goal_position := Vector2()
 
@@ -22,9 +23,7 @@ func _on_player_position_updated(player_position: Vector2) -> void:
 	_goal_position = player_position
 	
 	
-func _on_damageable_area_body_entered(body: Node2D) -> void:
-	var weapon: Weapon = body
-	
+func _on_damageable_area_body_entered(weapon: Weapon) -> void:
 	if weapon._holder is Player:
 		_take_damage(weapon._damage)
 

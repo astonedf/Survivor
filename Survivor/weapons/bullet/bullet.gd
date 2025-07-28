@@ -1,5 +1,5 @@
 class_name Bullet extends Weapon
-
+## @deprecated: Not yet refactored for the new weapon system
 
 @export var _speed := 500.0
 
