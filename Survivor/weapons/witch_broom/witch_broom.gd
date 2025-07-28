@@ -27,7 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_update_collision_shapes()
 
 
-func _on_hit_rate_timer_timeout() -> void:
+func _on_attack_rate_timer_timeout() -> void:
 	_attacking = true
 	_update_collision_shapes()
 	sprite_2d.flip_v = true
