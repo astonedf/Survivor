@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=25 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -11,9 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bq7ytyb4ugbsp" path="res://assets/player/witch10.png" id="9_58jvb"]
 [ext_resource type="Texture2D" uid="uid://cfqubdey3mtdq" path="res://assets/player/witch11.png" id="10_8l73k"]
 [ext_resource type="Texture2D" uid="uid://cd6nvoo554p01" path="res://assets/player/witch12.png" id="11_aqrcq"]
-[ext_resource type="Texture2D" uid="uid://bqxh7htlno2xo" path="res://assets/player/witch1.png" id="12_d2agh"]
-[ext_resource type="Texture2D" uid="uid://bvitqemes1g11" path="res://assets/player/witch2.png" id="13_fpo3a"]
-[ext_resource type="Texture2D" uid="uid://bxsj7n7pbii7" path="res://assets/player/witch3.png" id="14_kyfeq"]
 [ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
 [ext_resource type="PackedScene" uid="uid://c3shyj1haouky" path="res://weapons/witch_arm/witch_arm.tscn" id="17_aqrcq"]
 [ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/witch_broom/witch_broom.tscn" id="17_d2agh"]
@@ -36,22 +33,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -831.959, -465.981, 0, 0, 0, 0, 821.027, -462.057, 0, 0, 0, 0, 812.049, 450.285, 0, 0, 0, 0, -820.986, 450.285, 0, 0, 0, 0, -831.959, -460.095)
 }
 point_count = 5
-
-[sub_resource type="Animation" id="Animation_yybc7"]
-resource_name = "Hit"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("12_d2agh"), ExtResource("13_fpo3a"), ExtResource("14_kyfeq"), ExtResource("12_d2agh")]
-}
 
 [sub_resource type="Animation" id="Animation_on558"]
 resource_name = "Idle"
@@ -104,7 +85,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_icpky"]
 _data = {
-&"Hit": SubResource("Animation_yybc7"),
 &"Idle": SubResource("Animation_on558"),
 &"RESET": SubResource("Animation_gqopd"),
 &"Walk": SubResource("Animation_5mkjs")
@@ -179,9 +159,6 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="HitTimer" type="Timer" parent="."]
-wait_time = 3.0
-
 [node name="DamageableArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 8
@@ -211,5 +188,4 @@ position = Vector2(2, -9)
 [connection signal="area_exited" from="Spray" to="." method="_on_spray_area_exited"]
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
 [connection signal="body_entered" from="WeaponPickupRangeArea" to="." method="_on_weapon_pickup_range_area_body_entered"]
