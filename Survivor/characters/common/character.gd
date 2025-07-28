@@ -16,13 +16,17 @@ func _ready() -> void:
 	_damageable_area = get_node("DamageableArea")
 	_damageable_area.body_entered.connect(_on_damageable_area_body_entered)
 	_damageable_area.area_entered.connect(_on_damageable_area_area_entered)
+	
 
-
+## Damageable areas are set to detect only the weapons layer for now.
+## To make something damage characters, it must then herit from the Weapon class.
 func _on_damageable_area_body_entered(body: Node2D) -> void:
 	# Overriden in children classes
 	pass
+	
 		
-
+## Damageable areas are set to detect only the weapons layer for now.
+## To make something damage characters, it must then herit from the Weapon class.
 func  _on_damageable_area_area_entered(area: Area2D) -> void:
 	# Overriden in children classes
 	pass

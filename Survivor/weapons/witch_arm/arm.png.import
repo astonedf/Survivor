@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4jqufy08op3"
-path="res://.godot/imported/arm.png-d0188e57afd32a6e104c1ec46c733da9.ctex"
+path="res://.godot/imported/arm.png-244e9d6445898cbe9ab1d4e5362522e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/arm.png"
-dest_files=["res://.godot/imported/arm.png-d0188e57afd32a6e104c1ec46c733da9.ctex"]
+source_file="res://weapons/witch_arm/arm.png"
+dest_files=["res://.godot/imported/arm.png-244e9d6445898cbe9ab1d4e5362522e1.ctex"]
 
 [params]
 

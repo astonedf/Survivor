@@ -19,10 +19,11 @@ func _on_timer_timeout() -> void:
 	
 
 func pickup(new_holder: Character) -> void:
-	super.pickup(new_holder)
-	animation_player.play("RESET")
-	await animation_player.animation_finished
-	reparent(new_holder)
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", Vector2(), 0.2)
-	timer.start()
+	if _pickable:
+		super.pickup(new_holder)
+		animation_player.play("RESET")
+		await animation_player.animation_finished
+		reparent(new_holder)
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "position", Vector2(), 0.2)
+		timer.start()

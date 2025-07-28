@@ -1,9 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=29 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
 [ext_resource type="Script" uid="uid://c8nuytiag3hsy" path="res://characters/player/enemy_spawner.gd" id="2_xxgcw"]
-[ext_resource type="Texture2D" uid="uid://d4jqufy08op3" path="res://assets/arm.png" id="3_58jvb"]
 [ext_resource type="Texture2D" uid="uid://hdjfgk8iim74" path="res://assets/player/witch5.png" id="4_idpv6"]
 [ext_resource type="Texture2D" uid="uid://vcfi5b4e835j" path="res://assets/player/witch6.png" id="5_rpf03"]
 [ext_resource type="Texture2D" uid="uid://dopi03mkv0fuu" path="res://assets/player/witch7.png" id="6_x5dtk"]
@@ -16,13 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://bvitqemes1g11" path="res://assets/player/witch2.png" id="13_fpo3a"]
 [ext_resource type="Texture2D" uid="uid://bxsj7n7pbii7" path="res://assets/player/witch3.png" id="14_kyfeq"]
 [ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
+[ext_resource type="PackedScene" uid="uid://c3shyj1haouky" path="res://weapons/witch_arm/witch_arm.tscn" id="17_aqrcq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
 height = 44.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_58jvb"]
-radius = 21.0238
 
 [sub_resource type="Gradient" id="Gradient_onrkg"]
 offsets = PackedFloat32Array(0, 0.344156, 0.688312)
@@ -197,14 +194,6 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="CrushArea" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CrushColl" type="CollisionShape2D" parent="CrushArea"]
-shape = SubResource("CircleShape2D_58jvb")
-disabled = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="CanvasLayer"]
@@ -213,13 +202,6 @@ scale = Vector2(23.9375, 13.2266)
 color = Color(1, 0.918333, 0.65, 1)
 texture = SubResource("GradientTexture2D_i3pqv")
 offset = Vector2(35, 35)
-
-[node name="Arm" type="Sprite2D" parent="CanvasLayer"]
-texture_filter = 1
-position = Vector2(1395, 534)
-scale = Vector2(3, 3)
-texture = ExtResource("3_58jvb")
-centered = false
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("2_xxgcw")
@@ -267,7 +249,7 @@ shape = SubResource("CapsuleShape2D_icpky")
 disabled = true
 
 [node name="DamageableArea" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
@@ -284,6 +266,9 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPickupRangeArea"]
 shape = SubResource("CircleShape2D_8l73k")
 debug_color = Color(0.603271, 0.540052, 0.126825, 0.42)
+
+[node name="WitchArm" parent="." instance=ExtResource("17_aqrcq")]
+position = Vector2(391, 38)
 
 [connection signal="area_entered" from="Spray" to="." method="_on_spray_area_entered"]
 [connection signal="area_exited" from="Spray" to="." method="_on_spray_area_exited"]

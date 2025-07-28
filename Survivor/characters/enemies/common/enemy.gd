@@ -23,8 +23,11 @@ func _on_player_position_updated(player_position: Vector2) -> void:
 	
 	
 func _on_damageable_area_body_entered(body: Node2D) -> void:
-	if body is Weapon:
-		var weapon: Weapon = body
-		
-		if weapon._holder is Player:
-			_take_damage(weapon._damage)
+	var weapon: Weapon = body
+	
+	if weapon._holder is Player:
+		_take_damage(weapon._damage)
+
+
+func  _on_damageable_area_area_entered(area: Area2D) -> void:
+	pass
