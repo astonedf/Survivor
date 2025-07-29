@@ -8,7 +8,7 @@ var enemy_in_range = false
 var destination: Vector2
 var target_position: Vector2
 var direction
-	
+
 
 func _ready() -> void:
 	super._ready()

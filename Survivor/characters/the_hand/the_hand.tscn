@@ -19,4 +19,4 @@ texture = ExtResource("2_dbebw")
 centered = false
 
 [node name="FingerCrush" parent="." instance=ExtResource("3_851w7")]
-position = Vector2(-6, 3)
+position = Vector2(7, 6)
