@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Avoid the spawn path to rotate with the player
+	# Avoid the spawn path to rotate with the witch
 	global_rotation = 0.0
 
 
