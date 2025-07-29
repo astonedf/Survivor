@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4jqufy08op3"
-path="res://.godot/imported/arm.png-244e9d6445898cbe9ab1d4e5362522e1.ctex"
+path="res://.godot/imported/the_hand.png-52d68c6dcd80e32bb40fa303a38e5ad1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/witch_arm/arm.png"
-dest_files=["res://.godot/imported/arm.png-244e9d6445898cbe9ab1d4e5362522e1.ctex"]
+source_file="res://characters/the_hand/the_hand.png"
+dest_files=["res://.godot/imported/the_hand.png-52d68c6dcd80e32bb40fa303a38e5ad1.ctex"]
 
 [params]
 

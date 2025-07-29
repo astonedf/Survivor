@@ -1,6 +1,6 @@
 extends Weapon
 
-@onready var arm_sprite: Sprite2D = $Sprite2D
+
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 
@@ -14,15 +14,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		# Allows to hit one time directly without waiting the end of the first tick rate
 		collision_shape.disabled = false
 		_tick_rate_timer.start()
-		arm_sprite.scale = Vector2(0.75, 0.75)
 	if event.is_action_released("LMB"):
 		_tick_rate_timer.stop()
 		collision_shape.disabled = true
-		arm_sprite.scale = Vector2(1.0, 1.0)
 		
 
 func _physics_process(delta: float) -> void:
-	arm_sprite.position = get_local_mouse_position()
 	collision_shape.position = get_local_mouse_position()
 
 

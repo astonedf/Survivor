@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbefli1njodwt"
-path="res://.godot/imported/witch_frog.png-4cbe148b0b22a8d5f8b1550a71e73c5b.ctex"
+path="res://.godot/imported/frog.png-b718eadb8af6883b674836ceac7cd2d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/witch_frog/witch_frog.png"
-dest_files=["res://.godot/imported/witch_frog.png-4cbe148b0b22a8d5f8b1550a71e73c5b.ctex"]
+source_file="res://weapons/the_witch/frog/frog.png"
+dest_files=["res://.godot/imported/frog.png-b718eadb8af6883b674836ceac7cd2d6.ctex"]
 
 [params]
 

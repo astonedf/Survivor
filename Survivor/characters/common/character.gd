@@ -1,5 +1,5 @@
 class_name Character extends CharacterBody2D
-## Base class for Player, Enemy and Npc
+## Base class for TheHand, TheWitch, Enemy and Npc
 
 signal damage_taken(amount: float)
 

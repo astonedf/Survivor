@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://drv4dl8jmyeck"]
 
-[ext_resource type="Script" uid="uid://241h0sswcemd" path="res://weapons/witch_frog/witch_frog.gd" id="1_8th6u"]
-[ext_resource type="Texture2D" uid="uid://cbefli1njodwt" path="res://weapons/witch_frog/witch_frog.png" id="1_y3l4l"]
+[ext_resource type="Script" uid="uid://241h0sswcemd" path="res://weapons/the_witch/frog/frog.gd" id="1_8th6u"]
+[ext_resource type="Texture2D" uid="uid://cbefli1njodwt" path="res://weapons/the_witch/frog/frog.png" id="1_y3l4l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8th6u"]
 
@@ -131,7 +131,7 @@ _data = {
 &"jump": SubResource("Animation_8th6u")
 }
 
-[node name="WitchFrog" type="CharacterBody2D"]
+[node name="Frog" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_8th6u")

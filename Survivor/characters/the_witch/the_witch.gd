@@ -1,7 +1,7 @@
-class_name Player extends Character
+class_name TheWitch extends Character
 
-@onready var witch_arm: Weapon = $WitchArm
-@onready var witch_broom: Weapon = $WitchBroom
+
+@onready var broom: Weapon = $Broom
 
 var flower_in_range = []
 var enemy_in_range = false
@@ -12,8 +12,7 @@ var direction
 
 func _ready() -> void:
 	super._ready()
-	witch_arm.pickup(self)
-	witch_broom.pickup(self)
+	broom.pickup(self)
 	
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -23,7 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta):
-	PlayerManager.position_updated.emit(global_position)
+	TheWitchManager.position_updated.emit(global_position)
 	
 	if _can_move:
 		var mouse_distance = position.distance_to(get_global_mouse_position())
