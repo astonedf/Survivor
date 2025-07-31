@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0158jo3181dg"]
+[gd_scene load_steps=3 format=3 uid="uid://b0158jo3181dg"]
 
 [ext_resource type="PackedScene" uid="uid://ceu1vd8t26b5b" path="res://ui/hud/the_witch/the_witch_hud.tscn" id="1_xmswo"]
+[ext_resource type="PackedScene" uid="uid://b8jdvubbp15ej" path="res://ui/hud/debug/debug.tscn" id="2_4d6w6"]
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -20,3 +21,5 @@ layout_mode = 2
 
 [node name="TheWitchHud" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_xmswo")]
 layout_mode = 2
+
+[node name="Debug" parent="." instance=ExtResource("2_4d6w6")]

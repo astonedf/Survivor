@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcw1ak2t5b4m4"]
+[gd_scene load_steps=7 format=3 uid="uid://bcw1ak2t5b4m4"]
 
 [ext_resource type="Script" uid="uid://b86ceiyr2ypo5" path="res://characters/enemies/troll/troll.gd" id="1_l7lvb"]
 [ext_resource type="Texture2D" uid="uid://wy5v10ju3gmm" path="res://icon.svg" id="2_f0c5j"]
 [ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="3_wga3q"]
+[ext_resource type="PackedScene" uid="uid://bxj1i7s3b4amk" path="res://characters/common/DamageIndicator/damage_indicator.tscn" id="4_j5gku"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1yvt"]
 
@@ -14,13 +15,13 @@ texture_filter = 1
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_l7lvb")
-xp_given = 300
-_health = 400.0
+xp_given = 30
+max_health = 300
 _speed = 25.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.0640012, 0.754186, 1, 1)
-position = Vector2(0.499998, -0.346668)
+position = Vector2(-1.19209e-07, -2.98023e-08)
 scale = Vector2(0.179687, 0.182083)
 texture = ExtResource("2_f0c5j")
 
@@ -32,8 +33,9 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
-position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_nageh")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_wga3q")]
 position = Vector2(0, -23)
+
+[node name="DamageIndicator" parent="." instance=ExtResource("4_j5gku")]

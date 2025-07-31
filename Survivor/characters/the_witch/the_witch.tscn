@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=26 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bq7ytyb4ugbsp" path="res://assets/player/witch10.png" id="9_58jvb"]
 [ext_resource type="Texture2D" uid="uid://cfqubdey3mtdq" path="res://assets/player/witch11.png" id="10_8l73k"]
 [ext_resource type="Texture2D" uid="uid://cd6nvoo554p01" path="res://assets/player/witch12.png" id="11_aqrcq"]
+[ext_resource type="Script" uid="uid://ik27fwydfjmr" path="res://characters/the_witch/xp_indicator.gd" id="14_1cd3f"]
+[ext_resource type="PackedScene" uid="uid://bxj1i7s3b4amk" path="res://characters/common/DamageIndicator/damage_indicator.tscn" id="15_upxre"]
 [ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
 [ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/the_witch/broom/broom.tscn" id="17_d2agh"]
 
@@ -173,6 +175,12 @@ debug_color = Color(0.603271, 0.540052, 0.126825, 0.42)
 
 [node name="Broom" parent="." instance=ExtResource("17_d2agh")]
 position = Vector2(2, -9)
+
+[node name="XpIndicator" type="Node2D" parent="."]
+position = Vector2(0, -57)
+script = ExtResource("14_1cd3f")
+
+[node name="DamageIndicator" parent="." instance=ExtResource("15_upxre")]
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

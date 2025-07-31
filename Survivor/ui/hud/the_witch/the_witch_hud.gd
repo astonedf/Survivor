@@ -10,7 +10,8 @@ func _ready() -> void:
 	TheWitchManager.xp_updated.connect(_on_the_witch_xp_updated)
 	_on_the_witch_xp_updated(TheWitchManager._xp)
 	TheWitchManager.lvl_updated.connect(_on_the_witch_lvl_updated)
-	_on_the_witch_xp_updated(TheWitchManager._lvl)
+	_on_the_witch_lvl_updated(TheWitchManager._lvl)
+	
 
 func _on_the_witch_xp_updated(xp: int) -> void:
 	progress_bar.max_value = TheWitchManager._xp_to_reach_next_lvl

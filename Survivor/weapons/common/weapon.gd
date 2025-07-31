@@ -5,7 +5,7 @@ class_name Weapon extends CharacterBody2D
 ## they work.
 
 
-@export var _damage := 1.0
+@export var _damage := 1
 ## Can be picked up ?
 ## Set to false when the weapon is picked up.
 @export var _pickable := true
