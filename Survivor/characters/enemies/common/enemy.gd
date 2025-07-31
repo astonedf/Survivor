@@ -1,6 +1,8 @@
 class_name Enemy extends Character
 ## Contains the behavior common to all enemies
 
+## How much XP is given on death
+@export var xp_given := 0
 
 var _goal_position := Vector2()
 
@@ -30,3 +32,8 @@ func _on_damageable_area_body_entered(weapon: Weapon) -> void:
 
 func  _on_damageable_area_area_entered(area: Area2D) -> void:
 	pass
+	
+
+func _die():
+	TheWitchManager.receive_xp(xp_given)
+	queue_free()

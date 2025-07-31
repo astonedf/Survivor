@@ -14,6 +14,7 @@ texture_filter = 1
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_e1yvt")
+xp_given = 15
 _health = 100.0
 _speed = 65.0
 

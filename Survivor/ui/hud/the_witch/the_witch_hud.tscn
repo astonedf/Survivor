@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceu1vd8t26b5b"]
+
+[ext_resource type="Script" uid="uid://dbs5s0xw283h2" path="res://ui/hud/the_witch/the_witch_hud.gd" id="1_axx33"]
+[ext_resource type="Texture2D" uid="uid://calrmgtyl4j7j" path="res://ui/hud/the_witch/portrait.png" id="1_qgrog"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axx33"]
+bg_color = Color(0.6, 0.6, 0.6, 0.360784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csove"]
+bg_color = Color(0.644948, 0.551577, 0.985469, 1)
+
+[node name="TheWitchHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axx33")
+
+[node name="Portrait" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 37.0
+
+[node name="Texture" type="TextureRect" parent="Portrait"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_qgrog")
+stretch_mode = 3
+
+[node name="XpBar" type="Control" parent="Portrait"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Portrait/XpBar"]
+layout_mode = 1
+offset_right = 170.0
+offset_bottom = 23.0
+theme_override_styles/background = SubResource("StyleBoxFlat_axx33")
+theme_override_styles/fill = SubResource("StyleBoxFlat_csove")
+step = 1.0
+show_percentage = false
+
+[node name="XpValue" type="Label" parent="Portrait/XpBar"]
+layout_mode = 1
+offset_right = 170.0
+offset_bottom = 23.0
+text = "1 / 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelValue" type="Label" parent="."]
+layout_mode = 2
+offset_left = 106.0
+offset_top = 6.0
+offset_right = 130.0
+offset_bottom = 29.0
+horizontal_alignment = 1
+vertical_alignment = 1

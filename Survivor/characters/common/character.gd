@@ -42,4 +42,9 @@ func _take_damage(raw_amount: float) -> void:
 			damage_taken.emit(final_amount)
 			
 			if _health <= 0:
-				queue_free()
+				_die()
+
+
+func _die():
+	# Overriden in children
+	pass
