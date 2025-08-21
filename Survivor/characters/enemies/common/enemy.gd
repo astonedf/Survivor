@@ -35,5 +35,8 @@ func  _on_damageable_area_area_entered(area: Area2D) -> void:
 	
 
 func _die():
+	var xp_blood = xp_scene.instantiate()
+	xp_blood.position = global_position
+	get_parent().add_child(xp_blood)
 	TheWitchManager.receive_xp(xp_given)
 	queue_free()

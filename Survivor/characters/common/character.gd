@@ -10,6 +10,7 @@ signal damage_taken(amount: int)
 @export var _armor := 0
 
 var _health := 1
+var xp_scene = preload("res://characters/common/xp_blood/xp_blood.tscn")
 
 # Area where damage is received when entered by something
 var _damageable_area: Area2D = null
