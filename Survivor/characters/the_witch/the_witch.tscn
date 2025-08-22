@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=26 format=3 uid="uid://ck3m3011vrrgm"]
 
-[ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
-[ext_resource type="Script" uid="uid://c8nuytiag3hsy" path="res://characters/player/enemy_spawner.gd" id="2_xxgcw"]
-[ext_resource type="Texture2D" uid="uid://d4jqufy08op3" path="res://assets/arm.png" id="3_58jvb"]
+[ext_resource type="Script" uid="uid://c8nuytiag3hsy" path="res://characters/the_witch/enemy_spawner.gd" id="2_xxgcw"]
 [ext_resource type="Texture2D" uid="uid://hdjfgk8iim74" path="res://assets/player/witch5.png" id="4_idpv6"]
 [ext_resource type="Texture2D" uid="uid://vcfi5b4e835j" path="res://assets/player/witch6.png" id="5_rpf03"]
 [ext_resource type="Texture2D" uid="uid://dopi03mkv0fuu" path="res://assets/player/witch7.png" id="6_x5dtk"]
@@ -12,16 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://bq7ytyb4ugbsp" path="res://assets/player/witch10.png" id="9_58jvb"]
 [ext_resource type="Texture2D" uid="uid://cfqubdey3mtdq" path="res://assets/player/witch11.png" id="10_8l73k"]
 [ext_resource type="Texture2D" uid="uid://cd6nvoo554p01" path="res://assets/player/witch12.png" id="11_aqrcq"]
-[ext_resource type="Texture2D" uid="uid://bqxh7htlno2xo" path="res://assets/player/witch1.png" id="12_d2agh"]
-[ext_resource type="Texture2D" uid="uid://bvitqemes1g11" path="res://assets/player/witch2.png" id="13_fpo3a"]
-[ext_resource type="Texture2D" uid="uid://bxsj7n7pbii7" path="res://assets/player/witch3.png" id="14_kyfeq"]
+[ext_resource type="Script" uid="uid://ik27fwydfjmr" path="res://characters/the_witch/xp_indicator.gd" id="14_1cd3f"]
+[ext_resource type="PackedScene" uid="uid://bxj1i7s3b4amk" path="res://characters/common/DamageIndicator/damage_indicator.tscn" id="15_upxre"]
+[ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
+[ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/the_witch/broom/broom.tscn" id="17_d2agh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
 height = 44.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_58jvb"]
-radius = 21.0238
 
 [sub_resource type="Gradient" id="Gradient_onrkg"]
 offsets = PackedFloat32Array(0, 0.344156, 0.688312)
@@ -37,46 +34,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -831.959, -465.981, 0, 0, 0, 0, 821.027, -462.057, 0, 0, 0, 0, 812.049, 450.285, 0, 0, 0, 0, -820.986, 450.285, 0, 0, 0, 0, -831.959, -460.095)
 }
 point_count = 5
-
-[sub_resource type="Animation" id="Animation_yybc7"]
-resource_name = "Hit"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("12_d2agh"), ExtResource("13_fpo3a"), ExtResource("14_kyfeq"), ExtResource("12_d2agh")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HitArea:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0584552, 0.233333, 0.30689),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HitArea:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.30689),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
 
 [sub_resource type="Animation" id="Animation_on558"]
 resource_name = "Idle"
@@ -109,30 +66,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("2_dirf7")]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("HitArea:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HitArea:monitorable")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_5mkjs"]
 resource_name = "Walk"
@@ -153,45 +86,38 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_icpky"]
 _data = {
-&"Hit": SubResource("Animation_yybc7"),
 &"Idle": SubResource("Animation_on558"),
 &"RESET": SubResource("Animation_gqopd"),
 &"Walk": SubResource("Animation_5mkjs")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_icpky"]
-radius = 21.0
-height = 56.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8l73k"]
+radius = 19.0
+height = 78.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l73k"]
+radius = 88.6848
+
+[node name="TheWitch" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_onrkg")
+_can_move = false
+_speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(32, 0)
 texture = ExtResource("2_dirf7")
+region_enabled = true
+region_rect = Rect2(0, 0, 30.563, 76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_onrkg")
-
-[node name="Spray" type="Area2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spray"]
-position = Vector2(0, -2)
-polygon = PackedVector2Array(0, 2, 102, -22, 102, 24)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="CrushArea" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-
-[node name="CrushColl" type="CollisionShape2D" parent="CrushArea"]
-shape = SubResource("CircleShape2D_58jvb")
-disabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -201,13 +127,6 @@ scale = Vector2(23.9375, 13.2266)
 color = Color(1, 0.918333, 0.65, 1)
 texture = SubResource("GradientTexture2D_i3pqv")
 offset = Vector2(35, 35)
-
-[node name="Arm" type="Sprite2D" parent="CanvasLayer"]
-texture_filter = 1
-position = Vector2(1395, 534)
-scale = Vector2(3, 3)
-texture = ExtResource("3_58jvb")
-centered = false
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("2_xxgcw")
@@ -235,27 +154,34 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="HitTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+[node name="DamageableArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
 
-[node name="HitArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-monitoring = false
-monitorable = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
+shape = SubResource("CapsuleShape2D_8l73k")
+debug_color = Color(0.734018, 0.349385, 0.801787, 0.42)
 
-[node name="HitRight" type="CollisionShape2D" parent="HitArea"]
-position = Vector2(38, 0)
-shape = SubResource("CapsuleShape2D_icpky")
+[node name="HealthBar" parent="." instance=ExtResource("16_8l73k")]
+position = Vector2(0, -49)
 
-[node name="HitLeft" type="CollisionShape2D" parent="HitArea"]
-position = Vector2(-36, 1)
-shape = SubResource("CapsuleShape2D_icpky")
-disabled = true
+[node name="WeaponPickupRangeArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
 
-[connection signal="area_entered" from="Spray" to="." method="_on_spray_area_entered"]
-[connection signal="area_exited" from="Spray" to="." method="_on_spray_area_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPickupRangeArea"]
+shape = SubResource("CircleShape2D_8l73k")
+debug_color = Color(0.603271, 0.540052, 0.126825, 0.42)
+
+[node name="Broom" parent="." instance=ExtResource("17_d2agh")]
+position = Vector2(2, -9)
+
+[node name="XpIndicator" type="Node2D" parent="."]
+position = Vector2(0, -57)
+script = ExtResource("14_1cd3f")
+
+[node name="DamageIndicator" parent="." instance=ExtResource("15_upxre")]
+
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
+[connection signal="body_entered" from="WeaponPickupRangeArea" to="." method="_on_weapon_pickup_range_area_body_entered"]

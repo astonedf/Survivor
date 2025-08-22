@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://bvtilgfs7sbk6"]
+[gd_scene load_steps=11 format=4 uid="uid://bvtilgfs7sbk6"]
 
 [ext_resource type="Texture2D" uid="uid://dfnwg3km1fr3n" path="res://scenes/main/ts_dungeon.png" id="1_6q06x"]
 [ext_resource type="Texture2D" uid="uid://boytuax7c8d0y" path="res://scenes/main/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Tiles/Tileset.png" id="2_ow5a4"]
 [ext_resource type="Texture2D" uid="uid://cpir78vrqcbpj" path="res://scenes/main/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Decorations/Decorations.png" id="3_hujxm"]
-[ext_resource type="PackedScene" uid="uid://ck3m3011vrrgm" path="res://characters/player/player.tscn" id="4_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://ck3m3011vrrgm" path="res://characters/the_witch/the_witch.tscn" id="4_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://b0158jo3181dg" path="res://ui/hud/hud.tscn" id="6_hujxm"]
+[ext_resource type="PackedScene" uid="uid://chdxmebrxwpo7" path="res://characters/the_hand/the_hand.tscn" id="6_ow5a4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_6q06x")
@@ -683,3 +685,7 @@ position = Vector2(340, 284)
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(1, 1, 1, 0.611765)
 blend_mode = 1
+
+[node name="TheHand" parent="." instance=ExtResource("6_ow5a4")]
+
+[node name="Hud" parent="." instance=ExtResource("6_hujxm")]

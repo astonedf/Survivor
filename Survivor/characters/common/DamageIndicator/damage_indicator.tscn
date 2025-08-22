@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxj1i7s3b4amk"]
+
+[ext_resource type="Script" uid="uid://cc84hpsbf7b88" path="res://characters/common/DamageIndicator/damage_indicator.gd" id="1_gp3et"]
+
+[node name="DamageIndicator" type="Node2D"]
+script = ExtResource("1_gp3et")
