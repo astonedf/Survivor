@@ -3,6 +3,7 @@ class_name TheWitch extends Character
 
 @onready var broom: Weapon = $Broom
 
+
 var flower_in_range = []
 var enemy_in_range = false
 var destination: Vector2
