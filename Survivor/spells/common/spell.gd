@@ -6,10 +6,12 @@ enum SpellType {FIRE, WATER, ELECTRIC, EARTH, PLANT, WIND}
 
 @export var spell_type: SpellType
 @export var _auto_cast := true
+@export var is_single_target := true
 
 ## Time before the spell can be casted again. In Seconds.
 @export_range(0.06, 10.0, 0.01, "suffix:s") var _cooldown: float = 1.0
 @export var caster: Character = null
+var target: Node2D = null
 
 var _on_cooldown := false
 var _cooldown_timer := Timer.new()

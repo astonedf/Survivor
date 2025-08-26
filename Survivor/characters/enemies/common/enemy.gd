@@ -27,7 +27,11 @@ func _on_witch_position_updated(witch_position: Vector2) -> void:
 	
 func _on_damageable_area_body_entered(body: Node2D) -> void:
 	if body is SpellProjectile and body.caster is TheWitch:
-		_take_damage(body, body.damage)
+		if body.is_single_target:
+			if body.target == self:
+				_take_damage(body, body.damage)
+		else:
+			_take_damage(body, body.damage)
 
 
 func  _on_damageable_area_area_entered(area: Area2D) -> void:

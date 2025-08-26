@@ -32,7 +32,7 @@ func cast() -> void:
 		
 		if closest_target != null:
 			var new_projectile: SpellProjectile = projectile_scene.instantiate()
-			new_projectile.prepare(caster, spell_type, projectile_damage, closest_target, projectile_speed)
+			new_projectile.prepare(caster, spell_type, projectile_damage, closest_target, projectile_speed, is_single_target)
 			new_projectile.global_position = self.global_position
 			get_tree().current_scene.add_child(new_projectile)
 			new_projectile.cast()
