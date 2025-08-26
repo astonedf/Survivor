@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=27 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://ik27fwydfjmr" path="res://characters/the_witch/xp_indicator.gd" id="14_1cd3f"]
 [ext_resource type="PackedScene" uid="uid://bxj1i7s3b4amk" path="res://characters/common/DamageIndicator/damage_indicator.tscn" id="15_upxre"]
 [ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
+[ext_resource type="PackedScene" uid="uid://dw5p1kq0tl6lv" path="res://spells/fire_ball/fireball.tscn" id="16_unqio"]
 [ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/the_witch/broom/broom.tscn" id="17_d2agh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
@@ -96,7 +97,7 @@ radius = 19.0
 height = 78.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8l73k"]
-radius = 88.6848
+radius = 100.0
 
 [node name="TheWitch" type="CharacterBody2D"]
 collision_layer = 2
@@ -181,6 +182,8 @@ position = Vector2(0, -57)
 script = ExtResource("14_1cd3f")
 
 [node name="DamageIndicator" parent="." instance=ExtResource("15_upxre")]
+
+[node name="Fireball" parent="." instance=ExtResource("16_unqio")]
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

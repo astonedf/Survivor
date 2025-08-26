@@ -2,6 +2,7 @@ class_name TheWitch extends Character
 
 
 @onready var broom: Weapon = $Broom
+@onready var fireball: ProjectileSpell = $Fireball
 
 var flower_in_range = []
 var enemy_in_range = false
@@ -19,6 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
 		_can_move = true
 		destination = get_global_mouse_position()
+		fireball.caster = self
+		fireball.cast()
 
 
 func _physics_process(delta):
@@ -62,9 +65,8 @@ func _on_weapon_pickup_range_area_body_entered(weapon: Weapon) -> void:
 	weapon.pickup(self)
 
 
-func _on_damageable_area_body_entered(weapon: Weapon) -> void:
-	if weapon._holder is Enemy:
-		_take_damage(weapon._damage)
+func _on_damageable_area_body_entered(body: Node2D) -> void:
+	pass
 
 
 func  _on_damageable_area_area_entered(area: Area2D) -> void:

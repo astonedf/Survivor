@@ -15,7 +15,7 @@ func _ready() -> void:
 	parent.damage_taken.connect(_on_damage_taken)
 	
 
-func _on_damage_taken(amount: int) -> void:
+func _on_damage_taken(source:Node2D, amount: int) -> void:
 	progress_bar.value -= amount
 	_update_label(parent._health, parent.max_health)
 

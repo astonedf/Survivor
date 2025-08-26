@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bifyldnie3grv"]
+
+[ext_resource type="Script" uid="uid://dpw4upadfk66n" path="res://spells/common/ProjectileSpell/spell_projectile.gd" id="1_ae4gx"]
+
+[node name="SpellProjectile" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_ae4gx")

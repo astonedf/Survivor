@@ -8,7 +8,7 @@ func _ready() -> void:
 	_parent.damage_taken.connect(_on_damage_taken)
 	
 	
-func _on_damage_taken(amount: int) -> void:
+func _on_damage_taken(source: Node2D, amount: int) -> void:
 	var number_pop: NumberPop = _number_pop_scene.instantiate()
 	add_child(number_pop)
 	number_pop.pop(str(amount), Color(1.0, 1.0, 1.0))

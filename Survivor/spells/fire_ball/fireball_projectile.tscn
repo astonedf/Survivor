@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d12dcckojhskj"]
+
+[ext_resource type="Script" uid="uid://dpw4upadfk66n" path="res://spells/common/ProjectileSpell/spell_projectile.gd" id="1_sm0pn"]
+[ext_resource type="Texture2D" uid="uid://myvxmaxprgi2" path="res://spells/fire_ball/fireball_projectile.png" id="2_3286a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77af4"]
+
+[node name="FireballProjectile" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_sm0pn")
+metadata/_custom_type_script = "uid://dpw4upadfk66n"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.06641, 5.68699)
+scale = Vector2(0.0431714, 0.0406475)
+texture = ExtResource("2_3286a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_77af4")

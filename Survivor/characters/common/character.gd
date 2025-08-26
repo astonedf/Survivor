@@ -1,7 +1,9 @@
 class_name Character extends CharacterBody2D
 ## Base class for TheHand, TheWitch, Enemy and Npc
 
-signal damage_taken(amount: int)
+signal damage_taken(source:Node2D, amount: int)
+signal died(source: Node2D)
+
 
 @export var max_health := 1
 @export var _can_move := true
@@ -37,18 +39,11 @@ func  _on_damageable_area_area_entered(area: Area2D) -> void:
 	pass
 
 		
-func _take_damage(raw_amount: int) -> void:
-	if _can_take_damage:
-		var final_amount = raw_amount - _armor
-		
-		if final_amount > 0:
-			_health -= final_amount
-			damage_taken.emit(final_amount)
-			
-			if _health <= 0:
-				_die()
-
-
-func _die():
-	# Overriden in children
+func _take_damage(source: Node2D, raw_amount: int) -> void:
 	pass
+
+
+func _die(source: Node2D) -> void:
+	died.emit(source)
+	
+	
