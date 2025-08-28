@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmy80inkcm1jo"]
+
+[ext_resource type="Script" uid="uid://c57pmi0ntycjv" path="res://components/area_of_effect/area_of_effect.gd" id="1_dc50w"]
+
+[node name="AreaOfEffect" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_dc50w")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

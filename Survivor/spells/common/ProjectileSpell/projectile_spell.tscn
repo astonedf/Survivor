@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dk1o64mgq2cy0"]
-
-[ext_resource type="Script" uid="uid://ccwym2nqnpkfh" path="res://spells/common/ProjectileSpell/projectile_spell.gd" id="1_gqwrt"]
-
-[node name="ProjectileSpell" type="Node2D"]
-script = ExtResource("1_gqwrt")
-metadata/_custom_type_script = "uid://derxke8bdee8d"

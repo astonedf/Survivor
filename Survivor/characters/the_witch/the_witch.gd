@@ -1,49 +1,46 @@
 class_name TheWitch extends Character
 
 
-@onready var broom: Weapon = $Broom
-@onready var fireball: ProjectileSpell = $Fireball
+@export var speed: int
 
-var flower_in_range = []
-var enemy_in_range = false
+@onready var broom: Weapon = $Broom
+@onready var fireball: Fireball = $Fireball
+
 var destination: Vector2
 var target_position: Vector2
 var direction
 
 
 func _ready() -> void:
-	super._ready()
+	destination = global_position
 	broom.pickup(self)
+	fireball.cast()
 	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("RMB"):
-		_can_move = true
 		destination = get_global_mouse_position()
-		fireball.caster = self
-		fireball.cast()
 
 
 func _physics_process(delta):
 	TheWitchManager.position_updated.emit(global_position)
 	
-	if _can_move:
-		var mouse_distance = position.distance_to(get_global_mouse_position())
-		mouse_distance = remap(mouse_distance, 100, 1000, 0.1, 1)
+	var mouse_distance = position.distance_to(get_global_mouse_position())
+	mouse_distance = remap(mouse_distance, 100, 1000, 0.1, 1)
+	
+	if destination.x > position.x:
+		direction = 1
+	else:
+		direction = -1
+	
+	if position.distance_to(destination) > 3:
+		target_position = (destination - position).normalized()
+		velocity = target_position * speed
+		move_and_slide()
+	else:
+		velocity = Vector2(0,0)
 		
-		if destination.x > position.x:
-			direction = 1
-		else:
-			direction = -1
-		
-		if position.distance_to(destination) > 3:
-			target_position = (destination - position).normalized()
-			velocity = target_position * _speed
-			move_and_slide()
-		else:
-			velocity = Vector2(0,0)
-		
-		handle_movement_anim(direction)
+	handle_movement_anim(direction)
 			
 			
 func handle_movement_anim(dir):

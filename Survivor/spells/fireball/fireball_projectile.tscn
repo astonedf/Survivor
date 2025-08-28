@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d12dcckojhskj"]
+
+[ext_resource type="Script" uid="uid://toks6c1dyvdu" path="res://spells/fireball/fireball_projectile.gd" id="1_641dl"]
+[ext_resource type="Texture2D" uid="uid://myvxmaxprgi2" path="res://spells/fireball/fireball.png" id="2_3286a"]
+[ext_resource type="PackedScene" uid="uid://dab0pt07npbut" path="res://components/follow_target/follow_target.tscn" id="2_nn5dp"]
+[ext_resource type="PackedScene" uid="uid://cmy80inkcm1jo" path="res://components/area_of_effect/area_of_effect.tscn" id="4_op4rb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_op4rb"]
+
+[node name="FireballProjectile" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_641dl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.06641, 5.68699)
+scale = Vector2(0.0431714, 0.0406475)
+texture = ExtResource("2_3286a")
+
+[node name="FollowTarget" parent="." node_paths=PackedStringArray("to_move") instance=ExtResource("2_nn5dp")]
+to_move = NodePath("..")
+
+[node name="AreaOfEffect" parent="." instance=ExtResource("4_op4rb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfEffect"]
+shape = SubResource("CircleShape2D_op4rb")
+
+[connection signal="affectable_area_entered" from="AreaOfEffect" to="." method="_on_affectable_area_entered"]

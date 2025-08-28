@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2qss0ru1mjh1"]
-
-[ext_resource type="Script" uid="uid://dqx4u0x6m30gb" path="res://utilities/detection_area/detection_area.gd" id="1_aqkv6"]
-
-[node name="DetectionArea" type="Node2D" node_paths=PackedStringArray("_origin")]
-script = ExtResource("1_aqkv6")
-_origin = NodePath(".")
