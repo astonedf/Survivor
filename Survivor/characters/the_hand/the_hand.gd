@@ -4,6 +4,7 @@ class_name TheHand extends Character
 @onready var finger_crush: Weapon = $FingerCrush
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	finger_crush.pickup(self)
 
 	
