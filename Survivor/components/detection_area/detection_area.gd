@@ -23,11 +23,12 @@ func get_closest_body() -> Node2D:
 	var bodies = _area.get_overlapping_bodies()
 	
 	for body in bodies:
-		var distance_from_origin = _origin.global_position.distance_to(body.global_position)
-		
-		if distance_from_origin < shortest_distance:
-			shortest_distance = distance_from_origin
-			closest_body = body
+		if body != _origin:
+			var distance_from_origin = _origin.global_position.distance_to(body.global_position)
+			
+			if distance_from_origin < shortest_distance:
+				shortest_distance = distance_from_origin
+				closest_body = body
 
 	return closest_body
 

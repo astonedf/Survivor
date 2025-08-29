@@ -29,7 +29,7 @@ position = Vector2(0, 26)
 shape = SubResource("RectangleShape2D_887jg")
 
 [node name="FollowTheWitch" parent="." instance=ExtResource("3_3dwvb")]
-_speed = 100
+_speed = 75
 
 [node name="Health" parent="." instance=ExtResource("4_703ll")]
 max_health = 100
@@ -42,6 +42,5 @@ shape = SubResource("RectangleShape2D_fy70q")
 debug_color = Color(0.840578, 0.335508, 0.487398, 0.42)
 
 [connection signal="died" from="Health" to="." method="_on_health_died"]
-[connection signal="buff_received" from="AffectableArea" to="." method="_on_affectable_area_buff_received"]
 [connection signal="damage_taken" from="AffectableArea" to="." method="_on_affectable_area_damage_taken"]
 [connection signal="heal_received" from="AffectableArea" to="." method="_on_affectable_area_heal_received"]

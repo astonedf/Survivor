@@ -26,3 +26,4 @@ to_move = NodePath("..")
 shape = SubResource("CircleShape2D_op4rb")
 
 [connection signal="affectable_area_entered" from="AreaOfEffect" to="." method="_on_affectable_area_entered"]
+[connection signal="damage_done" from="AreaOfEffect" to="." method="_on_area_of_effect_damage_done"]

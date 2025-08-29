@@ -22,7 +22,6 @@ func cast() -> void:
 	if closest_target != null:
 		if caster.is_hostile_to(closest_target):
 			_target = closest_target
-			
 	## Spawn a projectile
 	if _target != null:
 		var new_projectile: FireballProjectile = projectile_scene.instantiate()

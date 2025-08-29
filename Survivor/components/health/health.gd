@@ -3,9 +3,12 @@ class_name Health extends Node2D
 
 signal died(source: Node2D)
 
+const number_indicator_scene: PackedScene = preload("res://components/number_indicator/number_indicator.tscn")
+
 @export_custom(PROPERTY_HINT_NONE, "suffix: hp") var max_health := 0
 @export var show_health_bar := true
 @export var show_label := false
+@export var show_damage := true
 
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var label: Label = $Label
@@ -29,6 +32,12 @@ func _ready() -> void:
 
 func take_damage(source: Node2D, amount: int) -> void:
 	health -= amount
+	
+	if show_damage:
+		var indicator = number_indicator_scene.instantiate()
+		indicator.global_position = global_position
+		get_tree().current_scene.add_child(indicator)
+		indicator.pop(str(amount), Color.INDIAN_RED)
 	
 	if show_health_bar:
 		health_bar.value -= amount

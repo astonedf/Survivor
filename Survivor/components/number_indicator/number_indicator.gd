@@ -1,4 +1,4 @@
-class_name NumberPop extends Node2D
+class_name NumberIndicator extends Node2D
 ## Shows a number that fades away progressively
 
 

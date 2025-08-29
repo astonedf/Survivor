@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=25 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bq7ytyb4ugbsp" path="res://assets/player/witch10.png" id="9_58jvb"]
 [ext_resource type="Texture2D" uid="uid://cfqubdey3mtdq" path="res://assets/player/witch11.png" id="10_8l73k"]
 [ext_resource type="Texture2D" uid="uid://cd6nvoo554p01" path="res://assets/player/witch12.png" id="11_aqrcq"]
+[ext_resource type="PackedScene" uid="uid://ds5nwkdm88jn7" path="res://components/affectable_area/affectable_area.tscn" id="14_1cd3f"]
 [ext_resource type="PackedScene" uid="uid://dw5p1kq0tl6lv" path="res://spells/fireball/fireball.tscn" id="16_unqio"]
 [ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/the_witch/broom/broom.tscn" id="17_d2agh"]
 
@@ -92,6 +93,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_8l73k"]
 radius = 100.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upxre"]
+radius = 7.0
+height = 53.31
+
 [node name="TheWitch" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_onrkg")
@@ -161,6 +166,12 @@ position = Vector2(2, -9)
 
 [node name="Fireball" parent="." node_paths=PackedStringArray("caster") instance=ExtResource("16_unqio")]
 caster = NodePath("..")
+
+[node name="AffectableArea" parent="." instance=ExtResource("14_1cd3f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AffectableArea"]
+shape = SubResource("CapsuleShape2D_upxre")
+debug_color = Color(0.899529, 0.259243, 0.453668, 0.42)
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

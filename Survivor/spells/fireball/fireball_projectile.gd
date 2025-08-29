@@ -28,13 +28,11 @@ func prepare(caster_: Character, spell_type_: Enums.Elements, damage_: int, targ
 	follow_target.speed = speed
 
 
-func _on_area_of_effect_area_entered(area: AffectableArea) -> void:
-	area.take_damage(self, spell_type, damage)
+func _on_affectable_area_entered(aoe: AreaOfEffect, affectable_area: AffectableArea) -> void:
+	# Single target
+	if affectable_area.source == target:
+		affectable_area.take_damage(aoe, spell_type, damage)
 
 
-func _on_affectable_area_entered(area: AffectableArea) -> void:
-	area.take_damage(self, spell_type, damage)
-
-
-func damage_inflicted(something: Node2D, amount: int):
+func _on_area_of_effect_damage_done(to: Node2D, amount: int) -> void:
 	queue_free()
