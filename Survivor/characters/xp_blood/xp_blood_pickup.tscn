@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg8dxydxutfjb"]
+
+[ext_resource type="Script" uid="uid://bwg644a2dkbmb" path="res://characters/xp_blood/xp_blood_pickup.gd" id="1_un8ys"]
+[ext_resource type="Texture2D" uid="uid://swj1tduambcm" path="res://assets/blood.png" id="2_uh8cq"]
+[ext_resource type="PackedScene" uid="uid://caxocsy3ly88d" path="res://components/XpReward/xp_reward.tscn" id="3_lj66e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5f7l4"]
+radius = 43.0116
+
+[sub_resource type="Gradient" id="Gradient_uh8cq"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5f7l4"]
+bg_color = Color(0.92, 0.322, 0.322, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="XpBloodPickup" type="Node2D"]
+script = ExtResource("1_un8ys")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_5f7l4")
+
+[node name="SpawnSpill" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.6
+emission_shape = 3
+emission_rect_extents = Vector2(10, 4)
+direction = Vector2(0, 100)
+spread = 60.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+scale_amount_max = 2.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_uh8cq")
+
+[node name="HoverSpill" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+explosiveness = 0.6
+emission_shape = 3
+emission_rect_extents = Vector2(10, 4)
+direction = Vector2(0, 100)
+spread = 60.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_uh8cq")
+
+[node name="CollectingSpill" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+direction = Vector2(0, 100)
+spread = 60.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_uh8cq")
+
+[node name="Blood" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -4)
+scale = Vector2(1.76, 1.63158)
+texture = ExtResource("2_uh8cq")
+
+[node name="CollectingTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="RegressionTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -73.0
+offset_top = -58.0
+offset_right = 66.0
+offset_bottom = -50.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_5f7l4")
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="XpReward" parent="." instance=ExtResource("3_lj66e")]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="CollectingTimer" to="." method="_on_collecting_timer_timeout"]
+[connection signal="timeout" from="RegressionTimer" to="." method="_on_regression_timer_timeout"]
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

@@ -5,7 +5,7 @@ signal died(source: Node2D)
 
 const number_indicator_scene: PackedScene = preload("res://components/number_indicator/number_indicator.tscn")
 
-@export_custom(PROPERTY_HINT_NONE, "suffix: hp") var max_health := 0
+@export_custom(PROPERTY_HINT_NONE, "suffix:hp") var max_health := 0
 @export var show_health_bar := true
 @export var show_label := false
 @export var show_damage := true

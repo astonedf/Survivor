@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct0n01nf6h4pm"]
+
+[ext_resource type="Script" uid="uid://cb46pcneoaiwh" path="res://characters/xp_blood/xp_blood.gd" id="1_7k76p"]
+
+[node name="XpBlood" type="Node2D"]
+script = ExtResource("1_7k76p")
+xp = 25
+_drop_chance = 50
