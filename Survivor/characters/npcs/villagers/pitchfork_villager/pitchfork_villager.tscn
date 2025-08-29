@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://lk5caunv0jof" path="res://components/follow_the_witch/follow_the_witch.tscn" id="3_3dwvb"]
 [ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://components/health/health.tscn" id="4_703ll"]
 [ext_resource type="PackedScene" uid="uid://ds5nwkdm88jn7" path="res://components/affectable_area/affectable_area.tscn" id="5_evqr6"]
-[ext_resource type="PackedScene" uid="uid://ct0n01nf6h4pm" path="res://characters/xp_blood/xp_blood.tscn" id="6_fy70q"]
+[ext_resource type="PackedScene" uid="uid://ct0n01nf6h4pm" path="res://components/xp_blood/xp_blood.tscn" id="6_fy70q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_887jg"]
 size = Vector2(30, 32)
