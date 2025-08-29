@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=24 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cd6nvoo554p01" path="res://assets/player/witch12.png" id="11_aqrcq"]
 [ext_resource type="PackedScene" uid="uid://ds5nwkdm88jn7" path="res://components/affectable_area/affectable_area.tscn" id="14_1cd3f"]
 [ext_resource type="PackedScene" uid="uid://dw5p1kq0tl6lv" path="res://spells/fireball/fireball.tscn" id="16_unqio"]
-[ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/the_witch/broom/broom.tscn" id="17_d2agh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
@@ -106,9 +105,10 @@ hostile_to = Array[int]([1])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(13, 0)
 texture = ExtResource("2_dirf7")
 region_enabled = true
-region_rect = Rect2(0, 0, 30.563, 76)
+region_rect = Rect2(0, 0, 59, 76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_onrkg")
@@ -160,9 +160,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPickupRangeArea"]
 shape = SubResource("CircleShape2D_8l73k")
 debug_color = Color(0.603271, 0.540052, 0.126825, 0.42)
-
-[node name="Broom" parent="." instance=ExtResource("17_d2agh")]
-position = Vector2(2, -9)
 
 [node name="Fireball" parent="." node_paths=PackedStringArray("caster") instance=ExtResource("16_unqio")]
 caster = NodePath("..")

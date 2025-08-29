@@ -3,7 +3,6 @@ class_name TheWitch extends Character
 
 @export var speed: int
 
-@onready var broom: Weapon = $Broom
 @onready var fireball: Fireball = $Fireball
 
 var destination: Vector2
@@ -13,7 +12,6 @@ var direction
 
 func _ready() -> void:
 	destination = global_position
-	broom.pickup(self)
 	fireball.cast()
 	
 
@@ -60,11 +58,3 @@ func toggle_flip_sprite(dir):
 
 func _on_weapon_pickup_range_area_body_entered(weapon: Weapon) -> void:
 	weapon.pickup(self)
-
-
-func _on_damageable_area_body_entered(body: Node2D) -> void:
-	pass
-
-
-func  _on_damageable_area_area_entered(area: Area2D) -> void:
-	pass

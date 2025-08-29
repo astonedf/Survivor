@@ -43,6 +43,7 @@ shape = SubResource("RectangleShape2D_fy70q")
 debug_color = Color(0.840578, 0.335508, 0.487398, 0.42)
 
 [node name="XpBlood" parent="." instance=ExtResource("6_fy70q")]
+collecting_time = 2
 
 [connection signal="died" from="Health" to="." method="_on_health_died"]
 [connection signal="damage_taken" from="AffectableArea" to="." method="_on_affectable_area_damage_taken"]
