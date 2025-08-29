@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://caxocsy3ly88d" path="res://components/XpReward/xp_reward.tscn" id="3_lj66e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f7l4"]
-radius = 43.0116
+radius = 51.0098
 
 [sub_resource type="Gradient" id="Gradient_uh8cq"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 0)

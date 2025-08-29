@@ -12,4 +12,4 @@ func spawn(pickup_position: Vector2) -> void:
 		pickup.collecting_time = collecting_time
 		pickup.xp = xp
 		pickup.global_position = pickup_position
-		get_tree().current_scene.add_child(pickup)
+		get_tree().current_scene.call_deferred("add_child", pickup)
