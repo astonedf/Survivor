@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ck3m3011vrrgm"]
+[gd_scene load_steps=24 format=3 uid="uid://ck3m3011vrrgm"]
 
 [ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
@@ -11,10 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://bq7ytyb4ugbsp" path="res://assets/player/witch10.png" id="9_58jvb"]
 [ext_resource type="Texture2D" uid="uid://cfqubdey3mtdq" path="res://assets/player/witch11.png" id="10_8l73k"]
 [ext_resource type="Texture2D" uid="uid://cd6nvoo554p01" path="res://assets/player/witch12.png" id="11_aqrcq"]
-[ext_resource type="Script" uid="uid://ik27fwydfjmr" path="res://characters/the_witch/xp_indicator.gd" id="14_1cd3f"]
-[ext_resource type="PackedScene" uid="uid://bxj1i7s3b4amk" path="res://characters/common/DamageIndicator/damage_indicator.tscn" id="15_upxre"]
-[ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://characters/common/health_bar/health_bar.tscn" id="16_8l73k"]
-[ext_resource type="PackedScene" uid="uid://dkky6meo7gsyq" path="res://weapons/the_witch/broom/broom.tscn" id="17_d2agh"]
+[ext_resource type="PackedScene" uid="uid://ds5nwkdm88jn7" path="res://components/affectable_area/affectable_area.tscn" id="14_1cd3f"]
+[ext_resource type="PackedScene" uid="uid://dw5p1kq0tl6lv" path="res://spells/fireball/fireball.tscn" id="16_unqio"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 22.0
@@ -91,25 +89,26 @@ _data = {
 &"Walk": SubResource("Animation_5mkjs")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8l73k"]
-radius = 19.0
-height = 78.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_8l73k"]
-radius = 88.6848
+radius = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upxre"]
+radius = 7.0
+height = 53.31
 
 [node name="TheWitch" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_onrkg")
-_can_move = false
-_speed = 100.0
+speed = 100
+allegiances = Array[int]([0])
+hostile_to = Array[int]([1])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(13, 0)
 texture = ExtResource("2_dirf7")
 region_enabled = true
-region_rect = Rect2(0, 0, 30.563, 76)
+region_rect = Rect2(0, 0, 59, 76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_onrkg")
@@ -154,17 +153,6 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="DamageableArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageableArea"]
-shape = SubResource("CapsuleShape2D_8l73k")
-debug_color = Color(0.734018, 0.349385, 0.801787, 0.42)
-
-[node name="HealthBar" parent="." instance=ExtResource("16_8l73k")]
-position = Vector2(0, -49)
-
 [node name="WeaponPickupRangeArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 8
@@ -173,14 +161,14 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_8l73k")
 debug_color = Color(0.603271, 0.540052, 0.126825, 0.42)
 
-[node name="Broom" parent="." instance=ExtResource("17_d2agh")]
-position = Vector2(2, -9)
+[node name="Fireball" parent="." node_paths=PackedStringArray("caster") instance=ExtResource("16_unqio")]
+caster = NodePath("..")
 
-[node name="XpIndicator" type="Node2D" parent="."]
-position = Vector2(0, -57)
-script = ExtResource("14_1cd3f")
+[node name="AffectableArea" parent="." instance=ExtResource("14_1cd3f")]
 
-[node name="DamageIndicator" parent="." instance=ExtResource("15_upxre")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AffectableArea"]
+shape = SubResource("CapsuleShape2D_upxre")
+debug_color = Color(0.899529, 0.259243, 0.453668, 0.42)
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

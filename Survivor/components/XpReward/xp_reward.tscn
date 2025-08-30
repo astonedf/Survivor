@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://caxocsy3ly88d"]
+
+[ext_resource type="Script" uid="uid://b5uhb6slaq3il" path="res://components/XpReward/xp_reward.gd" id="1_0y4dy"]
+
+[node name="XpReward" type="Node"]
+script = ExtResource("1_0y4dy")

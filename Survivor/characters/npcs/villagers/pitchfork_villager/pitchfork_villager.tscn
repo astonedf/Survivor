@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmylq42jh21fm"]
+
+[ext_resource type="Script" uid="uid://bme3gpllbuo80" path="res://characters/npcs/villagers/pitchfork_villager/pitchfork_villager.gd" id="1_q8nx5"]
+[ext_resource type="Texture2D" uid="uid://wy5v10ju3gmm" path="res://icon.svg" id="2_fy70q"]
+[ext_resource type="PackedScene" uid="uid://lk5caunv0jof" path="res://components/follow_the_witch/follow_the_witch.tscn" id="3_3dwvb"]
+[ext_resource type="PackedScene" uid="uid://bwdqxkchthan0" path="res://components/health/health.tscn" id="4_703ll"]
+[ext_resource type="PackedScene" uid="uid://ds5nwkdm88jn7" path="res://components/affectable_area/affectable_area.tscn" id="5_evqr6"]
+[ext_resource type="PackedScene" uid="uid://ct0n01nf6h4pm" path="res://components/xp_blood/xp_blood.tscn" id="6_fy70q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_887jg"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy70q"]
+size = Vector2(44, 44)
+
+[node name="PitchforkVillager" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_q8nx5")
+allegiances = Array[int]([1])
+hostile_to = Array[int]([0])
+metadata/_custom_type_script = "uid://dcnx56nc0v5g2"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 26)
+scale = Vector2(0.289063, 0.289063)
+texture = ExtResource("2_fy70q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_887jg")
+
+[node name="FollowTheWitch" parent="." instance=ExtResource("3_3dwvb")]
+_speed = 75
+
+[node name="Health" parent="." instance=ExtResource("4_703ll")]
+max_health = 100
+
+[node name="AffectableArea" parent="." instance=ExtResource("5_evqr6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AffectableArea"]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_fy70q")
+debug_color = Color(0.840578, 0.335508, 0.487398, 0.42)
+
+[node name="XpBlood" parent="." instance=ExtResource("6_fy70q")]
+collecting_time = 2
+
+[connection signal="died" from="Health" to="." method="_on_health_died"]
+[connection signal="damage_taken" from="AffectableArea" to="." method="_on_affectable_area_damage_taken"]
+[connection signal="heal_received" from="AffectableArea" to="." method="_on_affectable_area_heal_received"]

@@ -5,8 +5,7 @@ extends Node2D
 
 var _spawn_container: Node
 var _available_enemies: Array[PackedScene] = [
-	preload("res://characters/enemies/goblin/goblin.tscn"),
-	preload("res://characters/enemies/troll/troll.tscn")
+	preload("res://characters/npcs/villagers/pitchfork_villager/pitchfork_villager.tscn")
 ]
 
 
@@ -21,7 +20,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_spawn_timer_timeout() -> void:
 	# spawn_point will move automatically with the progress ratio of the path
-	spawn_path.progress_ratio = randf()
-	var enemy: Enemy = _available_enemies[randi_range(0, _available_enemies.size() - 1)].instantiate()
-	enemy.global_position = spawn_point.global_position
-	_spawn_container.add_child(enemy)
+	if _available_enemies.size() > 0:
+		spawn_path.progress_ratio = randf()
+		var enemy: Character = _available_enemies[randi_range(0, _available_enemies.size() - 1)].instantiate()
+		enemy.global_position = spawn_point.global_position
+		_spawn_container.add_child(enemy)

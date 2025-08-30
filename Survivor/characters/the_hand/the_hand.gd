@@ -1,10 +1,9 @@
 class_name TheHand extends Character
 
 @onready var arm_sprite: Sprite2D = $ArmSprite
-@onready var finger_crush: Weapon = $FingerCrush
 
 func _ready() -> void:
-	finger_crush.pickup(self)
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 	
 func _physics_process(delta: float) -> void:
