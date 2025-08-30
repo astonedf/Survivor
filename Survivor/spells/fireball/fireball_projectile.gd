@@ -26,6 +26,7 @@ func prepare(caster_: Character, spell_type_: Enums.Elements, damage_: int, targ
 	
 	follow_target.target = target
 	follow_target.speed = speed
+	look_at(target.position)
 
 
 func _on_affectable_area_entered(aoe: AreaOfEffect, affectable_area: AffectableArea) -> void:
