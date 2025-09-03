@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxrchlfmuu216"
-path="res://.godot/imported/Mockup2.png-26f094cdfa98721772a161050ce2ede4.ctex"
+path="res://.godot/imported/Mockup2.png-08499dda159d0364bdc57ba8dc51c6dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/main/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Mockup2.png"
-dest_files=["res://.godot/imported/Mockup2.png-26f094cdfa98721772a161050ce2ede4.ctex"]
+source_file="res://assets/TopDownFantasy_Forest_v1/TopDownFantasy-Forest/Mockup2.png"
+dest_files=["res://.godot/imported/Mockup2.png-08499dda159d0364bdc57ba8dc51c6dc.ctex"]
 
 [params]
 
