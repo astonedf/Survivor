@@ -1,42 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://crgyvchpaxy17"]
+[gd_scene load_steps=5 format=3 uid="uid://crgyvchpaxy17"]
 
+[ext_resource type="Texture2D" uid="uid://q2r7twkotjfv" path="res://assets/player/1.png" id="1_12ppc"]
 [ext_resource type="PackedScene" uid="uid://bglumh3jmdfw7" path="res://ui/level_upgrades/tree_button.tscn" id="1_em4sy"]
+[ext_resource type="Texture2D" uid="uid://bebdnx6k371a" path="res://assets/1.png" id="3_s4fl7"]
 
 [sub_resource type="Gradient" id="Gradient_7p7bw"]
-colors = PackedColorArray(0, 0, 0, 0.792157, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.526667, 0.973333)
+colors = PackedColorArray(0.528134, 0.478514, 0.405679, 1, 0.572549, 0.52549, 0.462745, 1, 0.572549, 0.52549, 0.462745, 0.0901961)
 
 [node name="SpellTree" type="CanvasLayer"]
+
+[node name="2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1064, 447.6)
+scale = Vector2(1.78, 1.78)
+texture = ExtResource("1_12ppc")
 
 [node name="HandTree" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 896.0
-offset_right = 1600.0
-offset_bottom = 896.0
+offset_left = 768.0
+offset_top = 48.0
+offset_right = 1472.0
+offset_bottom = 944.0
 
-[node name="Line2D" type="Line2D" parent="HandTree"]
+[node name="Line2D6" type="Line2D" parent="HandTree"]
 position = Vector2(-896, 40)
-points = PackedVector2Array(1176, 144, 1256, 232)
+points = PackedVector2Array(1384, 144, 1280, 408)
 gradient = SubResource("Gradient_7p7bw")
 
-[node name="Line2D2" type="Line2D" parent="HandTree"]
-position = Vector2(-888, 32)
-points = PackedVector2Array(1144, 304, 1248, 256)
+[node name="Line2D7" type="Line2D" parent="HandTree"]
+position = Vector2(-896, 40)
+points = PackedVector2Array(1168, 144, 1280, 408)
 gradient = SubResource("Gradient_7p7bw")
 
-[node name="Line2D3" type="Line2D" parent="HandTree"]
+[node name="Line2D8" type="Line2D" parent="HandTree"]
 position = Vector2(-896, 40)
-points = PackedVector2Array(1280, 400, 1280, 288)
+points = PackedVector2Array(1384, 144, 1144, 304)
 gradient = SubResource("Gradient_7p7bw")
 
-[node name="Line2D4" type="Line2D" parent="HandTree"]
+[node name="Line2D9" type="Line2D" parent="HandTree"]
 position = Vector2(-896, 40)
-points = PackedVector2Array(1416, 296, 1304, 256)
+points = PackedVector2Array(1416, 304, 1144, 304)
 gradient = SubResource("Gradient_7p7bw")
 
-[node name="Line2D5" type="Line2D" parent="HandTree"]
+[node name="Line2D10" type="Line2D" parent="HandTree"]
 position = Vector2(-896, 40)
-points = PackedVector2Array(1384, 144, 1304, 232)
+points = PackedVector2Array(1416, 304, 1176, 144)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="TreeButton" parent="HandTree" instance=ExtResource("1_em4sy")]
@@ -65,9 +75,9 @@ text = "DMG"
 self_modulate = Color(1, 0, 0, 1)
 layout_mode = 1
 offset_left = 512.0
-offset_top = 328.0
+offset_top = 336.0
 offset_right = 550.84
-offset_bottom = 328.384
+offset_bottom = 336.384
 grow_horizontal = 1
 grow_vertical = 1
 text = "HEAL"
@@ -98,127 +108,181 @@ text = "SHIELD"
 self_modulate = Color(1, 1, 0, 1)
 layout_mode = 1
 offset_left = 352.0
-offset_top = 264.0
+offset_top = 272.0
 offset_right = 390.84
-offset_bottom = 264.384
+offset_bottom = 272.384
 grow_horizontal = 1
 grow_vertical = 1
 text = "REVIVE"
 
+[node name="1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(424, 432)
+scale = Vector2(2.28846, 2.28846)
+texture = ExtResource("3_s4fl7")
+
 [node name="WitchTree" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 768.0
-offset_bottom = 896.0
+offset_left = 72.0
+offset_top = -24.0
+offset_right = 840.0
+offset_bottom = 872.0
 
 [node name="Line2D6" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1184, 128, 1288, 240)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D7" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1392, 128, 1288, 240)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D8" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1416, 136, 1416, 232)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D9" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1440, 128, 1544, 232)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D10" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1136, 128, 1032, 240)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D11" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1160, 136, 1160, 232)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D12" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1160, 136, 1160, 232)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D13" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1032, 288, 1096, 400)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D14" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1160, 288, 1096, 400)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D15" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1288, 296, 1224, 400)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D20" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1288, 296, 1352, 400)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D16" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1224, 456, 1224, 552)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D21" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1352, 456, 1352, 552)
+default_color = Color(1, 1, 1, 0.0117647)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D28" type="Line2D" parent="WitchTree"]
+position = Vector2(-936, 56)
+points = PackedVector2Array(1352, 456, 1288, 480)
+default_color = Color(1, 1, 1, 0.0117647)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D29" type="Line2D" parent="WitchTree"]
+position = Vector2(-936, 56)
+points = PackedVector2Array(1224, 448, 1288, 480)
+default_color = Color(1, 1, 1, 0.0117647)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D30" type="Line2D" parent="WitchTree"]
+position = Vector2(-936, 56)
+points = PackedVector2Array(1288, 536, 1352, 560)
+default_color = Color(1, 1, 1, 0.0117647)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D31" type="Line2D" parent="WitchTree"]
+position = Vector2(-936, 56)
+points = PackedVector2Array(1288, 536, 1224, 560)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D17" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1416, 288, 1480, 400)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D18" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1544, 288, 1480, 400)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D19" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1480, 448, 1480, 552)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D22" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1096, 456, 1096, 552)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D23" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1096, 448, 1000, 560)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D24" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1096, 608, 1160, 720)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D25" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1224, 608, 1160, 720)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D26" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1352, 608, 1416, 720)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="Line2D27" type="Line2D" parent="WitchTree"]
 position = Vector2(-936, 56)
 points = PackedVector2Array(1480, 608, 1416, 720)
+default_color = Color(1, 1, 1, 0.0117647)
 gradient = SubResource("Gradient_7p7bw")
 
 [node name="TreeButton" parent="WitchTree" instance=ExtResource("1_em4sy")]
