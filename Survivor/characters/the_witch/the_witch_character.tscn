@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://ck3m3011vrrgm"]
 
-[ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://dhmppoqbaejrn" path="res://characters/the_witch/the_witch_character.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://by7knt72ix16d" path="res://assets/player/witch4.png" id="2_dirf7"]
 [ext_resource type="Script" uid="uid://c8nuytiag3hsy" path="res://characters/the_witch/enemy_spawner.gd" id="2_xxgcw"]
 [ext_resource type="Texture2D" uid="uid://hdjfgk8iim74" path="res://assets/player/witch5.png" id="4_idpv6"]
@@ -29,7 +29,7 @@ fill_from = Vector2(0.495413, 0.486239)
 
 [sub_resource type="Curve2D" id="Curve2D_508ok"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -831.959, -465.981, 0, 0, 0, 0, 821.027, -462.057, 0, 0, 0, 0, 812.049, 450.285, 0, 0, 0, 0, -820.986, 450.285, 0, 0, 0, 0, -831.959, -460.095)
+"points": PackedVector2Array(0, 0, 0, 0, -828.319, -570.196, 0, 0, 0, 0, 972.657, -554.275, 0, 0, 0, 0, 977.207, 576.153, 0, 0, 0, 0, -835.599, 568.192, 0, 0, 0, 0, -828.319, -552.285)
 }
 point_count = 5
 
@@ -131,13 +131,13 @@ offset = Vector2(35, 35)
 script = ExtResource("2_xxgcw")
 
 [node name="SpawnPath" type="Path2D" parent="EnemySpawner"]
-position = Vector2(1.97937, 9)
-scale = Vector2(1.00243, 1.01935)
+position = Vector2(-79.4046, 2.01226)
+scale = Vector2(1.08616, 1.00319)
 curve = SubResource("Curve2D_508ok")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="EnemySpawner/SpawnPath"]
-position = Vector2(-831.959, -465.981)
-rotation = 0.00237387
+position = Vector2(-828.319, -570.196)
+rotation = 0.00884023
 
 [node name="SpawnPoint" type="Marker2D" parent="EnemySpawner/SpawnPath/PathFollow2D"]
 gizmo_extents = 85.5
@@ -161,8 +161,7 @@ collision_mask = 8
 shape = SubResource("CircleShape2D_8l73k")
 debug_color = Color(0.603271, 0.540052, 0.126825, 0.42)
 
-[node name="Fireball" parent="." node_paths=PackedStringArray("caster") instance=ExtResource("16_unqio")]
-caster = NodePath("..")
+[node name="Fireball" parent="." instance=ExtResource("16_unqio")]
 
 [node name="AffectableArea" parent="." instance=ExtResource("14_1cd3f")]
 

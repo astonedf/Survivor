@@ -1,4 +1,4 @@
-class_name Fireball extends Spell
+class_name Fireball extends Node2D
 
 const projectile_scene = preload("res://spells/fireball/fireball_projectile.tscn")
 
@@ -7,25 +7,21 @@ const projectile_scene = preload("res://spells/fireball/fireball_projectile.tscn
 
 @onready var detection_area: DetectionArea = $DetectionArea
 var _target: Character = null
+var _caster: Character = null
 
 
-func _ready() -> void:
-	super._ready()
-
-	
 func cast() -> void:
-	super.cast()
-	detection_area._origin = caster
+	detection_area._origin = self
 	
 	var closest_target: Character = detection_area.get_closest_body()
 		
 	if closest_target != null:
-		if caster.is_hostile_to(closest_target):
+		if _caster.is_hostile_to(closest_target):
 			_target = closest_target
 	## Spawn a projectile
 	if _target != null:
 		var new_projectile: FireballProjectile = projectile_scene.instantiate()
 		new_projectile.global_position = self.global_position
 		get_tree().current_scene.add_child(new_projectile)
-		new_projectile.prepare(caster, spell_type, damage, _target, speed)
+		new_projectile.prepare(_caster, Enums.Elements.FIRE, damage, _target, speed)
 		new_projectile.cast()

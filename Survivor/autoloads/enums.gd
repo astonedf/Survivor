@@ -1,4 +1,4 @@
-class_name Enums extends Node
+class_name Enums
 
 enum Elements {FIRE, WATER, ELECTRIC, EARTH, PLANT, WIND}
 ## Useful to know who hits whoS

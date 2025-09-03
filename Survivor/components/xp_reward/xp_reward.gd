@@ -5,4 +5,4 @@ class_name XpReward extends Node
 
 
 func reward_xp() -> void:
-	TheWitchManager.receive_xp(amount)
+	TheWitchManager.give_xp(amount)

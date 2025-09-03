@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddyl20q5f1ksu"]
+
+[ext_resource type="Script" uid="uid://clwe71yhepu2b" path="res://ui/spell_book_window/spell_entry/spell_entry.gd" id="1_6ggq1"]
+
+[node name="SpellEntry" type="Control"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6ggq1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 84.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SpellName" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "SpellName"

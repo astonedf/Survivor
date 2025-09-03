@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://l0swuhij4ner"]
+
+[ext_resource type="Script" uid="uid://blwjssguo16q1" path="res://ui/spell_book_window/spell_book_window.gd" id="1_56icw"]
+[ext_resource type="Texture2D" uid="uid://cv7lctpvitxo2" path="res://ui/spell_book_window/spellbook.png" id="1_am6oi"]
+
+[node name="SpellBookWindow" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_56icw")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Background" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_am6oi")
+
+[node name="Content" type="HBoxContainer" parent="CenterContainer/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftPage" type="VBoxContainer" parent="CenterContainer/Background/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Background/Content/LeftPage"]
+custom_minimum_size = Vector2(0, 545)
+layout_mode = 2
+theme_override_constants/margin_left = 71
+theme_override_constants/margin_top = 136
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 25
+
+[node name="SpellList" type="VBoxContainer" parent="CenterContainer/Background/Content/LeftPage/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/Background/Content/LeftPage"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightPage" type="VBoxContainer" parent="CenterContainer/Background/Content"]
+layout_mode = 2
+size_flags_horizontal = 3

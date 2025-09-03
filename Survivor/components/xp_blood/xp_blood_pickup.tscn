@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwg644a2dkbmb" path="res://components/xp_blood/xp_blood_pickup.gd" id="1_un8ys"]
 [ext_resource type="Texture2D" uid="uid://swj1tduambcm" path="res://assets/blood.png" id="2_uh8cq"]
-[ext_resource type="PackedScene" uid="uid://caxocsy3ly88d" path="res://components/XpReward/xp_reward.tscn" id="3_lj66e"]
+[ext_resource type="PackedScene" uid="uid://caxocsy3ly88d" path="res://components/xp_reward/xp_reward.tscn" id="3_lj66e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5f7l4"]
 radius = 51.0098
