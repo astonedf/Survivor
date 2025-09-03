@@ -1,0 +1,304 @@
+[gd_scene load_steps=3 format=3 uid="uid://crgyvchpaxy17"]
+
+[ext_resource type="PackedScene" uid="uid://bglumh3jmdfw7" path="res://ui/level_upgrades/tree_button.tscn" id="1_em4sy"]
+
+[sub_resource type="Gradient" id="Gradient_7p7bw"]
+colors = PackedColorArray(0, 0, 0, 0.792157, 1, 1, 1, 1)
+
+[node name="SpellTree" type="CanvasLayer"]
+
+[node name="HandTree" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 896.0
+offset_right = 1600.0
+offset_bottom = 896.0
+
+[node name="Line2D" type="Line2D" parent="HandTree"]
+position = Vector2(-896, 40)
+points = PackedVector2Array(1176, 144, 1256, 232)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D2" type="Line2D" parent="HandTree"]
+position = Vector2(-888, 32)
+points = PackedVector2Array(1144, 304, 1248, 256)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D3" type="Line2D" parent="HandTree"]
+position = Vector2(-896, 40)
+points = PackedVector2Array(1280, 400, 1280, 288)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D4" type="Line2D" parent="HandTree"]
+position = Vector2(-896, 40)
+points = PackedVector2Array(1416, 296, 1304, 256)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="Line2D5" type="Line2D" parent="HandTree"]
+position = Vector2(-896, 40)
+points = PackedVector2Array(1384, 144, 1304, 232)
+gradient = SubResource("Gradient_7p7bw")
+
+[node name="TreeButton" parent="HandTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+offset_left = 221.0
+offset_top = 126.0
+offset_right = 259.84
+offset_bottom = 126.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "XP"
+
+[node name="TreeButton2" parent="HandTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+offset_left = 480.0
+offset_top = 128.0
+offset_right = 518.84
+offset_bottom = 128.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "DMG"
+
+[node name="TreeButton3" parent="HandTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+offset_left = 512.0
+offset_top = 328.0
+offset_right = 550.84
+offset_bottom = 328.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "HEAL"
+
+[node name="TreeButton4" parent="HandTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+offset_left = 352.0
+offset_top = 440.0
+offset_right = 390.84
+offset_bottom = 440.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "CD"
+
+[node name="TreeButton5" parent="HandTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 336.0
+offset_right = 230.84
+offset_bottom = 336.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "SHIELD"
+
+[node name="TreeButton6" parent="HandTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+offset_left = 352.0
+offset_top = 264.0
+offset_right = 390.84
+offset_bottom = 264.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "REVIVE"
+
+[node name="WitchTree" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 768.0
+offset_bottom = 896.0
+
+[node name="TreeButton" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 192.256
+offset_bottom = 128.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Fire"
+
+[node name="TreeButton2" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 320.0
+offset_top = 288.0
+offset_right = 320.256
+offset_bottom = 288.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "DMG"
+
+[node name="TreeButton3" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 448.0
+offset_top = 128.0
+offset_right = 448.256
+offset_bottom = 128.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "lightng"
+
+[node name="TreeButton4" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 448.0
+offset_top = 288.0
+offset_right = 448.256
+offset_bottom = 288.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Stun"
+
+[node name="TreeButton5" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 192.0
+offset_top = 288.0
+offset_right = 192.256
+offset_bottom = 288.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "DoT"
+
+[node name="TreeButton6" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 576.0
+offset_top = 288.0
+offset_right = 576.256
+offset_bottom = 288.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Nbr"
+
+[node name="TreeButton7" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 512.0
+offset_top = 448.0
+offset_right = 512.256
+offset_bottom = 448.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Wind"
+
+[node name="TreeButton17" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 448.0
+offset_top = 768.0
+offset_right = 448.256
+offset_bottom = 768.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Water"
+
+[node name="TreeButton8" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 192.0
+offset_top = 768.0
+offset_right = 192.256
+offset_bottom = 768.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Plant"
+
+[node name="TreeButton9" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 128.0
+offset_top = 448.0
+offset_right = 128.256
+offset_bottom = 448.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Earth"
+
+[node name="TreeButton10" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 64.0
+offset_top = 288.0
+offset_right = 64.256
+offset_bottom = 288.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Speed"
+
+[node name="TreeButton11" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 320.0
+offset_top = 608.0
+offset_right = 320.256
+offset_bottom = 608.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Regen"
+
+[node name="TreeButton12" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 320.0
+offset_top = 448.0
+offset_right = 320.256
+offset_bottom = 448.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Health"
+
+[node name="TreeButton13" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 448.0
+offset_top = 608.0
+offset_right = 448.256
+offset_bottom = 608.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "XP"
+
+[node name="TreeButton14" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 224.0
+offset_top = 608.0
+offset_right = 224.256
+offset_bottom = 608.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Size"
+
+[node name="TreeButton15" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 32.0
+offset_top = 608.0
+offset_right = 32.256
+offset_bottom = 608.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Slow"
+
+[node name="TreeButton16" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 128.0
+offset_top = 608.0
+offset_right = 128.256
+offset_bottom = 608.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Nbr"
+
+[node name="TreeButton18" parent="WitchTree" instance=ExtResource("1_em4sy")]
+layout_mode = 1
+anchor_right = 0.083
+offset_left = 576.0
+offset_top = 608.0
+offset_right = 576.256
+offset_bottom = 608.384
+grow_horizontal = 1
+grow_vertical = 1
+text = "Nbr"
