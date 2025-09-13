@@ -170,6 +170,11 @@ caster = NodePath("..")
 shape = SubResource("CapsuleShape2D_upxre")
 debug_color = Color(0.899529, 0.259243, 0.453668, 0.42)
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+debug_enabled = true
+
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_spawn_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="WeaponPickupRangeArea" to="." method="_on_weapon_pickup_range_area_body_entered"]

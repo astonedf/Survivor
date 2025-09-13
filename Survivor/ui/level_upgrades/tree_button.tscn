@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://bglumh3jmdfw7"]
+[gd_scene load_steps=2 format=3 uid="uid://bglumh3jmdfw7"]
 
-[node name="TreeButton" type="Button"]
+[ext_resource type="Texture2D" uid="uid://cg0ctg8ik8y44" path="res://assets/6.png" id="1_ps4t6"]
+
+[node name="TreeButton" type="TextureButton"]
+texture_filter = 1
 anchors_preset = -1
 anchor_right = 0.04
 anchor_bottom = 0.071
@@ -8,21 +11,24 @@ offset_bottom = 0.0999985
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Description of the spell or upgrade"
+texture_normal = ExtResource("1_ps4t6")
+stretch_mode = 0
 
 [node name="upgrade_amount" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 48.0
-offset_right = 72.0
-offset_bottom = 72.0
+offset_left = 42.0
+offset_top = 42.0
+offset_right = 82.0
+offset_bottom = 66.0
 mouse_filter = 2
-color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+color = Color(0.705882, 0.654902, 0.580392, 1)
 
 [node name="n_upgrade" type="Label" parent="upgrade_amount"]
 layout_mode = 0
 offset_left = 7.0
 offset_right = 39.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.92549, 0.866667, 0.752941, 1)
 text = "0"
 
 [node name="max_upgrade" type="Label" parent="upgrade_amount"]
@@ -30,5 +36,6 @@ layout_mode = 0
 offset_left = 2.0
 offset_right = 34.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.92549, 0.866667, 0.752941, 1)
 text = "/5"
 horizontal_alignment = 2

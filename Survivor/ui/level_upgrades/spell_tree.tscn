@@ -12,7 +12,7 @@ colors = PackedColorArray(0.528134, 0.478514, 0.405679, 1, 0.572549, 0.52549, 0.
 
 [node name="2" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1064, 447.6)
+position = Vector2(1368, 456)
 scale = Vector2(1.78, 1.78)
 texture = ExtResource("1_12ppc")
 
@@ -58,7 +58,6 @@ offset_right = 259.84
 offset_bottom = 126.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "XP"
 
 [node name="TreeButton2" parent="HandTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 0, 1)
@@ -69,7 +68,6 @@ offset_right = 518.84
 offset_bottom = 128.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "DMG"
 
 [node name="TreeButton3" parent="HandTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 0, 1)
@@ -80,7 +78,6 @@ offset_right = 550.84
 offset_bottom = 336.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "HEAL"
 
 [node name="TreeButton4" parent="HandTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 0, 1)
@@ -91,7 +88,6 @@ offset_right = 390.84
 offset_bottom = 440.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "CD"
 
 [node name="TreeButton5" parent="HandTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 0, 1)
@@ -102,7 +98,6 @@ offset_right = 230.84
 offset_bottom = 336.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "SHIELD"
 
 [node name="TreeButton6" parent="HandTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 1, 0, 1)
@@ -113,7 +108,6 @@ offset_right = 390.84
 offset_bottom = 272.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "REVIVE"
 
 [node name="1" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -295,7 +289,6 @@ offset_right = 192.256
 offset_bottom = 128.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Fire"
 
 [node name="TreeButton2" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 1, 1)
@@ -307,7 +300,6 @@ offset_right = 320.256
 offset_bottom = 288.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "DMG"
 
 [node name="TreeButton3" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 0.509804, 1, 1)
@@ -319,7 +311,6 @@ offset_right = 448.256
 offset_bottom = 128.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "lightng"
 
 [node name="TreeButton4" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -331,7 +322,6 @@ offset_right = 448.256
 offset_bottom = 288.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Stun"
 
 [node name="TreeButton5" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -343,7 +333,6 @@ offset_right = 192.256
 offset_bottom = 288.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "DoT"
 
 [node name="TreeButton19" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -355,7 +344,6 @@ offset_right = 64.256
 offset_bottom = 288.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Nbr"
 
 [node name="TreeButton6" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -367,7 +355,6 @@ offset_right = 576.256
 offset_bottom = 288.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Nbr"
 
 [node name="TreeButton7" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 0.509804, 1, 1)
@@ -379,7 +366,6 @@ offset_right = 512.256
 offset_bottom = 448.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Wind"
 
 [node name="TreeButton17" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 0.509804, 1, 1)
@@ -391,7 +377,6 @@ offset_right = 448.256
 offset_bottom = 768.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Water"
 
 [node name="TreeButton8" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 0.509804, 1, 1)
@@ -403,7 +388,6 @@ offset_right = 192.256
 offset_bottom = 768.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Plant"
 
 [node name="TreeButton9" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 0.509804, 1, 1)
@@ -415,7 +399,6 @@ offset_right = 128.256
 offset_bottom = 448.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Earth"
 
 [node name="TreeButton10" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 1, 1)
@@ -427,7 +410,6 @@ offset_right = 320.256
 offset_bottom = 528.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Speed"
 
 [node name="TreeButton11" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 1, 1)
@@ -439,7 +421,6 @@ offset_right = 256.256
 offset_bottom = 608.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Regen"
 
 [node name="TreeButton12" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 1, 1)
@@ -451,7 +432,6 @@ offset_right = 256.256
 offset_bottom = 448.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Health"
 
 [node name="TreeButton13" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 1, 1)
@@ -463,7 +443,6 @@ offset_right = 384.256
 offset_bottom = 448.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "CD"
 
 [node name="TreeButton14" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(1, 0, 1, 1)
@@ -475,7 +454,6 @@ offset_right = 384.256
 offset_bottom = 608.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Size"
 
 [node name="TreeButton15" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -487,7 +465,6 @@ offset_right = 32.256
 offset_bottom = 608.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Slow"
 
 [node name="TreeButton16" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -499,7 +476,6 @@ offset_right = 128.256
 offset_bottom = 608.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Nbr"
 
 [node name="TreeButton18" parent="WitchTree" instance=ExtResource("1_em4sy")]
 self_modulate = Color(0, 1, 1, 1)
@@ -511,4 +487,3 @@ offset_right = 512.256
 offset_bottom = 608.384
 grow_horizontal = 1
 grow_vertical = 1
-text = "Nbr"
