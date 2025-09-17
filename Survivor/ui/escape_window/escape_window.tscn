@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drewg3xua8cu"]
+
+[ext_resource type="Script" uid="uid://cyrx10a22s1fu" path="res://ui/escape_window/escape_window.gd" id="1_6lpgr"]
+
+[node name="EscapeWindow" type="Node2D"]
+script = ExtResource("1_6lpgr")

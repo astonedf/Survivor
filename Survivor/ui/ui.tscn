@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3jnk6cv7ol4l"]
+[gd_scene load_steps=5 format=3 uid="uid://b3jnk6cv7ol4l"]
 
 [ext_resource type="PackedScene" uid="uid://b0158jo3181dg" path="res://ui/hud/hud.tscn" id="1_wl5ax"]
 [ext_resource type="PackedScene" uid="uid://djblo1q7ghk00" path="res://ui/level_upgrades/level_upgrades.tscn" id="2_vkava"]
 [ext_resource type="PackedScene" uid="uid://l0swuhij4ner" path="res://ui/spell_book_window/spell_book_window.tscn" id="3_tf0e0"]
+[ext_resource type="PackedScene" uid="uid://drewg3xua8cu" path="res://ui/escape_window/escape_window.tscn" id="4_vkava"]
 
 [node name="Ui" type="CanvasLayer"]
 
@@ -13,3 +14,5 @@ visible = false
 
 [node name="SpellBookWindow" parent="." instance=ExtResource("3_tf0e0")]
 unique_name_in_owner = true
+
+[node name="EscapeWindow" parent="." instance=ExtResource("4_vkava")]
